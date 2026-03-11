@@ -140,48 +140,18 @@
       <div class="cs-section-inner">
         <h3 class="cs-subsection-title">Current experience vs. Gated CNP payments</h3>
 
-        <div class="cs-journey">
-          <p class="cs-journey-label">Current Risk Experience</p>
-          <div class="cs-journey-steps">
-            <div class="cs-step cs-step--neutral"><span class="cs-step-emoji">🙂</span><span>Sign up</span></div>
-            <div class="cs-step cs-step--neutral"><span class="cs-step-emoji">🙂</span><span>Onboarding</span></div>
-            <div class="cs-step cs-step--neutral"><span class="cs-step-emoji">😀</span><span>First payment</span></div>
-            <div class="cs-step cs-step--bad"><span class="cs-step-emoji">🤯</span><span>Funds frozen</span></div>
-            <div class="cs-step cs-step--bad"><span class="cs-step-emoji">😡</span><span>Doc request</span></div>
-            <div class="cs-step cs-step--recover"><span class="cs-step-emoji">😕</span><span>Account unfrozen</span></div>
-          </div>
-        </div>
-
-        <div class="cs-journey">
-          <p class="cs-journey-label">Gate CNP Payments</p>
-          <div class="cs-journey-steps">
-            <div class="cs-step cs-step--neutral"><span class="cs-step-emoji">🙂</span><span>Sign up</span></div>
-            <div class="cs-step cs-step--neutral"><span class="cs-step-emoji">🙂</span><span>Onboarding</span></div>
-            <div class="cs-step cs-step--warning"><span class="cs-step-emoji">🧐</span><span>CNP gated</span></div>
-            <div class="cs-step cs-step--neutral"><span class="cs-step-emoji">🙂</span><span>Verify docs</span></div>
-            <div class="cs-step cs-step--good"><span class="cs-step-emoji">😀</span><span>CNP unlocked</span></div>
-            <div class="cs-step cs-step--good"><span class="cs-step-emoji">😀</span><span>Take payments</span></div>
-          </div>
-          <div class="cs-journey-pros-cons">
-            <div>
-              <p class="cs-pros-label">Pros</p>
-              <ul>
-                <li>Reduces the number of good sellers who have funds held</li>
-                <li>Requests documentation at a more expected time</li>
-                <li>Since CNP payments account for most fraud, we can gate only the riskiest kinds while still allowing sellers to take CP payments</li>
-              </ul>
-            </div>
-            <div>
-              <p class="cs-cons-label">Cons</p>
-              <ul>
-                <li>A more complicated mental model — certain payment methods will be blocked while others are open</li>
-                <li>May be difficult to scale as each payment platform has unique UX for CNP payments</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <button class="cs-journey-img-btn" onclick="openLightbox()" aria-label="View full journey map">
+          <img src="/public/images/ProactiveDocIDV/journey.jpg" alt="Journey map comparing current risk experience vs. gated CNP payments" />
+          <span class="cs-journey-img-hint">Click to expand</span>
+        </button>
       </div>
     </section>
+
+    <!-- LIGHTBOX -->
+    <div id="cs-lightbox" class="cs-lightbox" onclick="closeLightbox()">
+      <button class="cs-lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+      <img src="/public/images/ProactiveDocIDV/journey.jpg" alt="Journey map" onclick="event.stopPropagation()" />
+    </div>
 
     <!-- USABILITY TESTING -->
     <section class="cs-section cs-section--gray">
@@ -280,5 +250,16 @@
     </footer>
 
     <script type="module" src="/src/main.js"></script>
+    <script>
+      function openLightbox() {
+        document.getElementById('cs-lightbox').classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeLightbox() {
+        document.getElementById('cs-lightbox').classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    </script>
   </body>
 </html>
