@@ -130,20 +130,23 @@
         </div>
 
         <h3 class="cs-subsection-title">Proposed experience: Gate our riskiest payments</h3>
-        <p class="cs-body">During discovery, we uncovered that card-not-present (CNP) payments accounted for &gt;75% of transactions that triggered risk actions. Focusing on these types of payments could potentially deliver the most proverbial bang for the buck.</p>
-        <p class="cs-body">Additionally, 80% of fake account freezes happen after a seller's first or second payment through Square. Meaning that if we wanted to prevent freezes, we needed to do it as early in the sellers' journey as possible.</p>
-      </div>
-    </section>
-
-    <!-- JOURNEY MAPS -->
-    <section class="cs-section">
-      <div class="cs-section-inner">
-        <h3 class="cs-subsection-title">Current experience vs. Gated CNP payments</h3>
+        <p class="cs-body">During discovery, we uncovered that <strong>card-not-present (CNP) payments accounted for &gt;75% of transactions that triggered risk actions.</strong> So we knew that focusing on these types of payments could potentially deliver the most proverbial bang for the buck.</p>
+        <p class="cs-body">Additionally, <strong>80% of fake account freezes happen after a sellers' first or second payment through Square.</strong> Meaning that if we wanted to prevent freezes, we needed to do it as early in the sellers' journey as possible.</p>
 
         <button class="cs-journey-img-btn" onclick="openLightbox()" aria-label="View full journey map">
           <img src="/public/images/ProactiveDocIDV/journey2.jpg" alt="Journey map comparing current risk experience vs. gated CNP payments" />
           <span class="cs-journey-img-hint">Click to expand</span>
         </button>
+      </div>
+    </section>
+
+    <!-- PROOF OF CONCEPT -->
+    <section class="cs-section">
+      <div class="cs-section-inner">
+        <h3 class="cs-subsection-title" style="margin-top: 0;">Proof of concept: Warn + Block</h3>
+        <p class="cs-body">Due to internal constraints around testing timelines, mobile eng resources, and a lack of data on the likelihood of certain risk actions across various payment scenarios, we aligned on a proof of concept that focused on the web-based payment platform Virtual Terminal.</p>
+
+        <div class="cs-img-placeholder">Proof of concept screens — image coming soon</div>
       </div>
     </section>
 
@@ -157,9 +160,12 @@
     <section class="cs-section cs-section--gray">
       <div class="cs-section-inner">
         <p class="cs-section-label">Research</p>
-        <h2 class="cs-section-title">Usability Testing</h2>
-        <p class="cs-body">Due to internal constraints around testing timelines, mobile eng resources, and a lack of data on the likelihood of certain risk actions across various payment scenarios, we aligned on a proof of concept focused on the web-based payment platform: Virtual Terminal.</p>
-        <p class="cs-body">Using the scenario that a seller had just signed up for Square and skipped an optional ID verification step, we tested a single prototype with 8 sellers (4 Square sellers, 4 non-Square sellers), taking them from the VT dashboard through an ID verification modal and finally to a gated version of VT.</p>
+        <h2 class="cs-section-title">Usability testing:</h2>
+        <p class="cs-body">We wanted to feedback on the new VT CNP gated flow content that included a modal explaining their options if they do or do not verify as well as the actual VT experience with certain payment methods gated.</p>
+        <p class="cs-body">Using the scenario that the seller had just signed up for Square and skipped an optional ID verification step, we tested a single prototype. The prototype took the <strong>8 sellers (4 Square sellers, and 4 non-Square sellers)</strong> from the VT dashboard through an ID verification modal and finally to a gated version of VT.</p>
+
+        <h3 class="cs-subsection-title">Prototype</h3>
+        <div class="cs-img-placeholder">Prototype screens — image coming soon</div>
 
         <div class="cs-finding">
           <p class="cs-finding-label">Key Finding</p>
@@ -222,7 +228,7 @@
     <section class="cs-section cs-outcome">
       <div class="cs-section-inner">
         <p class="cs-section-label">Outcome</p>
-        <h2 class="cs-section-title">Risky Business for Services Sellers</h2>
+        <h2 class="cs-section-title">Results</h2>
 
         <div class="cs-outcome-stats">
           <div class="cs-outcome-stat">
