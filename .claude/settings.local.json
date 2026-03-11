@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:developers.figma.com)",
+      "Read(//Users/ashleyvonclausburg/.claude/local/**)",
+      "Read(//usr/local/bin/**)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d.get\\(''''mcpServers'''', {}\\), indent=2\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d, indent=2\\)\\)\")",
+      "Bash(find ~/.claude -name *.json)",
+      "Bash(brew install:*)",
+      "Bash(python3 -c \"import pdfplumber; pdf = pdfplumber.open\\(''/Users/ashleyvonclausburg/Documents/Desktop.pdf''\\); print\\(pdf.pages[0].extract_text\\(\\)[:2000]\\)\")",
+      "Bash(python3 -c \"import PyPDF2; r = PyPDF2.PdfReader\\(''/Users/ashleyvonclausburg/Documents/Desktop.pdf''\\); print\\(r.pages[0].extract_text\\(\\)[:2000]\\)\")",
+      "Bash(qlmanage -t -s 1200 -o /tmp/pdf_preview /Users/ashleyvonclausburg/Documents/Desktop.pdf)",
+      "Read(//tmp/**)",
+      "Bash(pip3 install:*)",
+      "Bash(python3 -c \":*)",
+      "Bash(npm create:*)",
+      "mcp__Claude_Preview__preview_start",
+      "mcp__figma-desktop__get_design_context",
+      "mcp__figma-desktop__get_screenshot",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}
