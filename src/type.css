@@ -1,0 +1,114 @@
+/* ── TYPOGRAPHY SYSTEM ──────────────────────────────
+   All text styles live here. Use these classes and
+   variables everywhere — don't hardcode sizes in
+   component stylesheets.
+─────────────────────────────────────────────────── */
+
+:root {
+  /* Size scale */
+  --t-xs:    12px;
+  --t-sm:    14px;
+  --t-base:  16px;
+  --t-md:    18px;
+  --t-lg:    20px;
+  --t-xl:    24px;
+  --t-2xl:   32px;
+  --t-3xl:   40px;
+  --t-4xl:   56px;
+
+  /* Weight */
+  --w-regular: 400;
+  --w-medium:  500;
+  --w-semi:    600;
+  --w-bold:    700;
+
+  /* Line heights */
+  --lh-tight:  1.1;
+  --lh-snug:   1.2;
+  --lh-normal: 1.45;
+  --lh-relaxed: 1.65;
+  --lh-loose:  1.75;
+
+  /* Colors */
+  --color-text:        #000;
+  --color-text-soft:   rgba(0, 0, 0, 0.75);
+  --color-text-muted:  rgba(0, 0, 0, 0.55);
+  --color-text-faint:  rgba(0, 0, 0, 0.4);
+  --color-accent:      #006aff;
+
+  /* Spacing scale (for gaps between type elements) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+}
+
+/* ── Semantic type classes ──────────────────────── */
+
+/* EYEBROW / LABEL — e.g. "BACKGROUND", "PROCESS" */
+.t-label {
+  font-size: var(--t-sm);
+  font-weight: var(--w-semi);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  line-height: var(--lh-normal);
+}
+
+/* SECTION TITLE — major h2 headings */
+.t-section-title {
+  font-size: var(--t-2xl);
+  font-weight: var(--w-semi);
+  letter-spacing: -0.02em;
+  line-height: var(--lh-snug);
+  color: var(--color-text);
+}
+
+/* SUBSECTION TITLE — h3 within a section */
+.t-subsection {
+  font-size: var(--t-xl);
+  font-weight: var(--w-semi);
+  letter-spacing: -0.015em;
+  line-height: var(--lh-snug);
+  color: var(--color-text);
+}
+
+/* CARD / STAT TITLE — h4 level */
+.t-card-title {
+  font-size: var(--t-lg);
+  font-weight: var(--w-semi);
+  letter-spacing: -0.01em;
+  line-height: var(--lh-snug);
+  color: var(--color-text);
+}
+
+/* BODY LARGE — main narrative copy */
+.t-body-lg {
+  font-size: var(--t-md);
+  font-weight: var(--w-medium);
+  line-height: var(--lh-relaxed);
+  letter-spacing: -0.005em;
+  color: var(--color-text-soft);
+}
+
+/* BODY — standard body copy */
+.t-body {
+  font-size: var(--t-base);
+  font-weight: var(--w-medium);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-soft);
+}
+
+/* SMALL — captions, meta, quotes attribution */
+.t-small {
+  font-size: var(--t-sm);
+  font-weight: var(--w-medium);
+  line-height: var(--lh-normal);
+  color: var(--color-text-muted);
+}
