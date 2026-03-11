@@ -44,6 +44,30 @@ nav {
 
 .nav-links a:hover { color: #0099ff; }
 
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-animate {
+  opacity: 0;
+  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Scroll reveal for project cards */
+.project-card {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.project-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* HERO */
 .hero {
   min-height: 90vh;
@@ -52,13 +76,17 @@ nav {
   justify-content: center;
   padding: 80px 80px 60px;
   gap: 28px;
+  position: relative;
 }
 
 .avatar {
-  width: 88px;
-  height: 88px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
+  position: absolute;
+  top: 48px;
+  right: 80px;
 }
 
 .headline {

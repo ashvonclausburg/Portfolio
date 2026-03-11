@@ -1,0 +1,75 @@
+/* ============================================================
+   wordpress.css — WordPress.com 2018 Digital case study styles
+   ============================================================ */
+
+/* Hero override — text-only (reuses automattic pattern) */
+.cs-hero-inner--text-only {
+  display: block;
+  max-width: 700px;
+}
+
+/* Hero brand banner */
+.wp-brand-banner {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.wp-brand-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Social ads — 2×2 grid */
+.wp-social-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 40px;
+}
+.wp-social-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Email mockups — side by side */
+.wp-email-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 40px;
+  align-items: start;
+}
+.wp-email-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Display / banner ads — full-width stacked */
+.wp-display-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 40px;
+}
+.wp-display-stack img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .wp-social-grid {
+    grid-template-columns: 1fr;
+  }
+  .wp-email-grid {
+    grid-template-columns: 1fr;
+  }
+}
