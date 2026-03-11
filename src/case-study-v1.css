@@ -6,7 +6,8 @@
 }
 
 .cs-hero-inner {
-  max-width: 900px;
+  max-width: 850px;
+  margin: 0 auto;
 }
 
 .cs-label {
@@ -69,7 +70,9 @@
 }
 
 .cs-section-inner {
-  max-width: 900px;
+  max-width: 850px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .cs-section-label {
