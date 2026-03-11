@@ -1,0 +1,213 @@
+/* ── AUTOMATTIC DESIGN CASE STUDY ── */
+
+/* Hero: text-only layout (no side image) */
+.cs-hero-inner--text-only {
+  display: block;
+  max-width: 700px;
+}
+
+/* Full-width hero brand image */
+.cs-brand-banner {
+  line-height: 0;
+  border-bottom: 1px solid #f0f0f0;
+  overflow: hidden;
+}
+.cs-brand-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: -15px;
+  margin-bottom: -15px;
+}
+
+/* Figure with caption */
+.cs-figure {
+  margin: 40px 0 0;
+}
+.cs-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+.cs-figure figcaption {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 10px;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+/* Logo deconstruction diagram */
+.cs-deconstruct {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  margin: 48px 0 0;
+  padding: 56px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 16px;
+}
+.cs-deconstruct-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.cs-deconstruct-item img {
+  height: 96px;
+  width: auto;
+}
+.cs-deconstruct-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #999;
+}
+.cs-deconstruct-arrow {
+  font-size: 28px;
+  color: #ccc;
+  padding-bottom: 36px; /* align with images, offset for label */
+}
+
+/* Color swatches */
+.cs-colors {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0 24px;
+}
+.cs-color-swatch {
+  height: 72px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.cs-color-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+/* Gradient bar */
+.cs-gradient-bar {
+  margin-bottom: 48px;
+}
+.cs-gradient-bar img {
+  width: 100%;
+  height: 48px;
+  display: block;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  object-fit: fill;
+}
+
+/* Typography specimens */
+.cs-type-specimens {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  margin: 32px 0;
+  background: rgba(0,0,0,0.08);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.cs-type-spec-item {
+  padding: 40px;
+  background: #fff;
+}
+.cs-type-spec-name {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 16px;
+}
+.cs-type-spec-name span {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.cs-type-spec-sample {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+  color: #111;
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+}
+.cs-type-spec-sample--sans  { font-family: 'Libre Franklin', sans-serif; }
+.cs-type-spec-sample--serif { font-family: 'Libre Baskerville', serif; font-weight: 400; }
+.cs-type-spec-chars {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #666;
+}
+.cs-type-spec-chars--sans  { font-family: 'Libre Franklin', sans-serif; }
+.cs-type-spec-chars--serif { font-family: 'Libre Baskerville', serif; }
+
+/* 2×2 image grid */
+.cs-img-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 32px 0 0;
+}
+.cs-img-2x2 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* 2-column image grid */
+.cs-img-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 32px 0 0;
+}
+.cs-img-2col img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+.cs-img-2col--top-align {
+  align-items: start;
+}
+
+/* Search screens (3-up mobile frames) */
+.cs-search-screens {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.cs-search-screens img {
+  flex: 1;
+  min-width: 0;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .cs-deconstruct { flex-direction: column; gap: 32px; padding: 32px; }
+  .cs-deconstruct-arrow { transform: rotate(90deg); padding-bottom: 0; }
+  .cs-colors { grid-template-columns: 1fr; }
+  .cs-type-specimens { grid-template-columns: 1fr; }
+  .cs-img-2x2 { grid-template-columns: 1fr; }
+  .cs-img-2col { grid-template-columns: 1fr; }
+  .cs-search-screens { flex-direction: column; }
+  .cs-search-screens img { width: 60%; }
+}
