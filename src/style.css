@@ -157,13 +157,21 @@ nav {
 }
 
 .project-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  transition: box-shadow 0.3s;
+}
+
+.project-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
 }
 
 .project-thumb {
   overflow: hidden;
-  border-radius: 12px;
   background: #f5f5f5;
   aspect-ratio: 16/10;
 }
@@ -180,36 +188,42 @@ nav {
   transform: scale(1.04);
 }
 
-.project-info {
+.project-card-body {
+  padding: 18px 20px 22px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 0 0;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.pill {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: #f0f0f0;
+  color: #555;
 }
 
 .project-title {
   font-size: 17px;
   font-weight: 600;
+  line-height: 1.3;
+  color: #000;
 }
 
-.project-tag {
+.project-desc {
   font-size: 13px;
-  font-weight: 500;
   color: #999;
-}
-
-/* Option comparison badge */
-.option-badge {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #fff;
-  background: #000;
-  padding: 4px 10px;
-  border-radius: 4px;
-  margin-bottom: 48px;
+  line-height: 1.5;
 }
 
 /* Work category sections */
@@ -217,8 +231,6 @@ nav {
   margin-bottom: 64px;
 }
 .work-cat:last-child { margin-bottom: 0; }
-
-.work-cat--secondary .project-thumb { aspect-ratio: 4/3; }
 
 .work-cat-header {
   display: flex;
@@ -254,53 +266,6 @@ nav {
 .work-cat-tagline {
   font-size: 14px;
   color: #999;
-}
-
-/* Card metadata layout */
-.project-info--meta {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 3px;
-}
-
-.project-desc {
-  font-size: 13px;
-  color: #999;
-  line-height: 1.5;
-  margin-top: 1px;
-}
-
-/* Compact grid — 2-col for secondary section */
-.project-grid--compact {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-/* Split card: image left, text right */
-.project-card--split {
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  border: 1px solid #eee;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: box-shadow 0.3s;
-  min-height: 200px;
-}
-.project-card--split:hover {
-  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-}
-.project-card--split .project-thumb {
-  aspect-ratio: unset;
-  border-radius: 0;
-  height: 100%;
-  min-height: 200px;
-}
-.project-card--split:hover .project-thumb img {
-  transform: scale(1.04);
-}
-.project-card--split .project-info {
-  padding: 28px 24px;
-  justify-content: center;
-  border-left: 1px solid #f0f0f0;
 }
 
 /* ABOUT */
