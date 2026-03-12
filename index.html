@@ -25,7 +25,13 @@
     <section class="hero">
       <img class="avatar" src="/images/avatar-sketch.svg" alt="Profile illustration" />
       <h1 class="headline hero-animate" style="--delay:0.05s">Designer &amp;<br>Developer.</h1>
-      <p class="tagline hero-animate" style="--delay:0.25s">I craft digital experiences that are clean, fast, and intentional.<br>Based in San Francisco, open to work.</p>
+      <div class="hero-bottom hero-animate" style="--delay:0.25s">
+        <button class="hero-email" onclick="navigator.clipboard.writeText('ashley@email.com')" title="Copy email">
+          ashley@email.com
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
+        <p class="tagline">I craft digital experiences that are clean, fast, and intentional. Based in San Francisco, open to work.</p>
+      </div>
     </section>
 
     <hr class="divider" />

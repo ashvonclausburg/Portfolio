@@ -73,9 +73,8 @@ nav {
   min-height: 90vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 80px 80px 60px;
-  gap: 28px;
+  justify-content: space-between;
+  padding: 80px 80px 64px;
   position: relative;
 }
 
@@ -96,12 +95,38 @@ nav {
   letter-spacing: -0.04em;
 }
 
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+}
+
+.hero-email {
+  font-size: 15px;
+  font-weight: 500;
+  color: #222;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: color 0.2s;
+}
+
+.hero-email:hover { color: #006aff; }
+
 .tagline {
-  font-size: 18px;
-  font-weight: 400;
-  color: #555;
-  line-height: 1.6;
-  max-width: 520px;
+  font-size: 22px;
+  font-weight: 500;
+  color: #111;
+  line-height: 1.55;
+  max-width: 420px;
+  text-align: justify;
 }
 
 /* DIVIDER */
@@ -252,4 +277,6 @@ footer {
   .project-grid { grid-template-columns: 1fr; }
   .about-content { grid-template-columns: 1fr; gap: 40px; }
   .hero { min-height: 70vh; }
+  .hero-bottom { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .tagline { text-align: left; max-width: 100%; }
 }

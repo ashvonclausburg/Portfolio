@@ -419,6 +419,38 @@
   padding: 10px 14px;
 }
 
+/* Rec with image: full-width card, stacked layout */
+.cs-rec--has-image {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cs-rec--has-image .cs-rec-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cs-rec--has-image .cs-rec-quotes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 12px;
+}
+
+.cs-rec-img {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cs-rec-img img {
+  width: 100%;
+  display: block;
+}
+
 .cs-solution {
   margin-bottom: 48px;
   padding-bottom: 48px;
@@ -453,6 +485,13 @@
   line-height: 1.65;
   color: #444;
   margin-top: 16px;
+}
+
+.cs-solution-img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  margin-top: 28px;
 }
 
 .cs-outcome { background: #000; color: #fff; }
@@ -576,6 +615,7 @@
   margin: 32px 0;
   display: block;
   box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  clip-path: inset(3px 3px 3px 3px round 16px);
 }
 
 /* Image placeholder */
@@ -608,6 +648,7 @@
   .cs-quote--full { grid-column: 1; }
   .cs-two-col { grid-template-columns: 1fr; }
   .cs-recs { grid-template-columns: 1fr; }
+  .cs-rec--has-image .cs-rec-quotes { grid-template-columns: 1fr; }
   .cs-journey-pros-cons { grid-template-columns: 1fr; }
   .cs-outcome-stats { flex-direction: column; gap: 32px; }
   .cs-outcome-number { font-size: 64px; }

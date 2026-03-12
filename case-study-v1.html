@@ -134,7 +134,7 @@
         <p class="cs-body">During discovery, we uncovered that <strong>card-not-present (CNP) payments accounted for &gt;75% of transactions that triggered risk actions.</strong> So we knew that focusing on these types of payments could potentially deliver the most proverbial bang for the buck.</p>
         <p class="cs-body">Additionally, <strong>80% of fake account freezes happen after a sellers' first or second payment through Square.</strong> Meaning that if we wanted to prevent freezes, we needed to do it as early in the sellers' journey as possible.</p>
 
-        <button class="cs-journey-img-btn" onclick="openLightbox()" aria-label="View full journey map">
+        <button class="cs-journey-img-btn" onclick="openLightbox('/public/images/ProactiveDocIDV/journey2.jpg', 'Journey map')" aria-label="View full journey map">
           <img src="/public/images/ProactiveDocIDV/journey2.jpg" alt="Journey map comparing current risk experience vs. gated CNP payments" />
           <span class="cs-journey-img-hint">Click to expand</span>
         </button>
@@ -144,10 +144,13 @@
     <!-- PROOF OF CONCEPT -->
     <section class="cs-section">
       <div class="cs-section-inner">
-        <h3 class="cs-subsection-title" style="margin-top: 0;">Proof of concept: Warn + Block</h3>
+        <h3 class="cs-subsection-title" style="margin-top: 0;">Proof of concept: Warn + Lock</h3>
         <p class="cs-body">Due to internal constraints around testing timelines, mobile eng resources, and a lack of data on the likelihood of certain risk actions across various payment scenarios, we aligned on a proof of concept that focused on the web-based payment platform Virtual Terminal.</p>
 
-        <div class="cs-img-placeholder">Proof of concept screens — image coming soon</div>
+        <button class="cs-journey-img-btn" onclick="openLightbox('/images/ProactiveDocIDV/Warn_Lock.png', 'Warn + Lock proof of concept screens')" aria-label="View Warn + Lock screens" style="margin-top: 24px;">
+          <img class="cs-solution-img" src="/images/ProactiveDocIDV/Warn_Lock.png" alt="Warn + Lock proof of concept screens" style="margin-top: 0;" />
+          <span class="cs-journey-img-hint">Click to expand</span>
+        </button>
       </div>
     </section>
 
@@ -183,14 +186,19 @@
         </div>
 
         <div class="cs-recs">
-          <div class="cs-rec">
-            <span class="cs-rec-num">Rec 01</span>
-            <h3>List payment options</h3>
-            <p>Sellers wanted explicit information around which payment types were available before and after verification. The modal needed to clearly list what was blocked and what would be unlocked.</p>
-            <div class="cs-rec-quotes">
-              <p>"The screen doesn't specify I'm going to have other options"</p>
-              <p>"You told me I'm not allowed more, but I have these other options. I should have been told that on the previous screen."</p>
-              <p>"I don't know what the other payment methods are"</p>
+          <div class="cs-rec cs-rec--has-image">
+            <div class="cs-rec-text">
+              <span class="cs-rec-num">Rec 01</span>
+              <h3>List payment options</h3>
+              <p>Sellers wanted explicit information around which payment types were available before and after verification. The modal needed to clearly list what was blocked and what would be unlocked.</p>
+              <div class="cs-rec-quotes">
+                <p>"The screen doesn't specify I'm going to have other options"</p>
+                <p>"You told me I'm not allowed more, but I have these other options. I should have been told that on the previous screen."</p>
+                <p>"I don't know what the other payment methods are"</p>
+              </div>
+            </div>
+            <div class="cs-rec-img">
+              <img src="/images/ProactiveDocIDV/ResearchRecommendation1.png" alt="List payment options recommendation" />
             </div>
           </div>
           <div class="cs-rec">
@@ -222,6 +230,7 @@
             <li>If the seller <strong>skips</strong> this step, they are payment activated for all payments except CNP on Virtual Terminal</li>
             <li>If the seller <strong>completes</strong> this step, they are payment activated for all products immediately</li>
           </ul>
+          <img class="cs-solution-img" src="/images/ProactiveDocIDV/Solution_Part1.png" alt="Optional DocIDV at onboarding screen" />
         </div>
 
         <div class="cs-solution">
@@ -230,6 +239,7 @@
             <h3>Gate CNP Payments on VT</h3>
           </div>
           <p class="cs-body">Sellers who skip verification during onboarding encounter a clear gate when they navigate to Virtual Terminal and attempt a card-not-present payment. The gate explicitly lists which payment methods are available now vs. after verification — directly addressing the usability testing insights.</p>
+          <img class="cs-solution-img" src="/images/ProactiveDocIDV/Solution_Part2.png" alt="Gate CNP Payments on VT screen" />
         </div>
       </div>
     </section>
@@ -267,8 +277,11 @@
 
     <script type="module" src="/src/main.js"></script>
     <script>
-      function openLightbox() {
-        document.getElementById('cs-lightbox').classList.add('is-open');
+      function openLightbox(src, alt) {
+        const lb = document.getElementById('cs-lightbox');
+        lb.querySelector('img').src = src;
+        lb.querySelector('img').alt = alt || '';
+        lb.classList.add('is-open');
         document.body.style.overflow = 'hidden';
       }
       function closeLightbox() {
