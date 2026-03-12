@@ -622,6 +622,123 @@
   min-height: 200px;
 }
 
+/* ── Approach cards (stacked, text left / images right) ── */
+.cs-approach-card {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 40px;
+  align-items: start;
+  padding: 32px;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  background: #fff;
+  transition: box-shadow 0.2s;
+}
+
+.cs-approach-card:hover {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+
+.cs-approach-card.is-chosen {
+  border: 2px solid #006aff;
+  background: #fafcff;
+}
+
+.cs-approach-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+.cs-approach-desc {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.cs-approach-pros-cons {
+  display: flex;
+  gap: 24px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.cs-approach-pros-cons-col {
+  flex: 1;
+}
+
+.cs-approach-pros-cons-col strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.cs-approach-pros-cons-col.pros strong { color: #1a7a4a; }
+.cs-approach-pros-cons-col.cons strong { color: #c0392b; }
+
+.cs-approach-pros-cons-col ul {
+  margin: 0;
+  padding-left: 16px;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cs-approach-imgs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cs-approach-ref-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #bbb;
+  margin-bottom: 6px;
+}
+
+.cs-approach-ref-img {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #f5f5f5;
+}
+
+.cs-approach-ref-img img {
+  width: 100%;
+  display: block;
+}
+
+.cs-chosen-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #1a7a4a;
+  background: #edfaf3;
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .cs-approach-card {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .cs-hero, .cs-section, .cs-footer { padding-left: 24px; padding-right: 24px; }
   .cs-hero-inner { flex-direction: column; gap: 40px; }
