@@ -27,6 +27,21 @@
   border-radius: 16px;
 }
 
+.cs-hero--no-image {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.cs-hero-full-image {
+  margin-top: 48px;
+}
+
+.cs-hero-full-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .cs-label {
   font-size: 12px;
   font-weight: 600;
