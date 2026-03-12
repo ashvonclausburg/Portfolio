@@ -152,7 +152,7 @@ nav {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
@@ -186,6 +186,22 @@ nav {
 
 .project-card:hover .project-thumb img {
   transform: scale(1.04);
+}
+
+/* Per-image crop helpers */
+.project-thumb .img-crop-top {
+  transform: scale(1.35);
+  transform-origin: top center;
+}
+.project-card:hover .project-thumb .img-crop-top {
+  transform: scale(1.4);
+}
+.project-thumb .img-crop-face {
+  transform: scale(1.1);
+  transform-origin: 35% center;
+}
+.project-card:hover .project-thumb .img-crop-face {
+  transform: scale(1.15);
 }
 
 .project-card-body {
