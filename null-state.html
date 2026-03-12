@@ -170,11 +170,23 @@
         <h2 class="cs-section-title">How the page evolves.</h2>
         <p class="cs-body">The dynamic null state adapts as sellers engage. The page opens with a marketing-forward layout built for new users, shifts to an action-oriented view after the first send, then settles into the standard product experience once the seller is active.</p>
         <div class="cs-screen-loop-wrap">
-          <div class="cs-screen-loop" id="cs-screen-loop">
-            <div class="cs-screen-loop__placeholder">Screenshots coming soon</div>
-            <img class="cs-screen-loop__frame" src="/images/NullState/Evolving/NullStateV1.png" alt="Initial null state" />
-            <img class="cs-screen-loop__frame" src="/images/NullState/Evolving/NullStateV3.png" alt="First-use state" />
-            <img class="cs-screen-loop__frame" src="/images/NullState/Evolving/NullStateV2.png" alt="Active state" />
+          <div class="cs-screen-loop-pair">
+            <div>
+              <p class="cs-screen-loop-col-label">Marketing-led</p>
+              <div class="cs-screen-loop">
+                <img class="cs-screen-loop__frame" src="/images/NullState/Evolving/NullStateV1.png" alt="Marketing-led initial state" />
+                <img class="cs-screen-loop__frame" src="/images/NullState/Evolving/NullStateV3.png" alt="First-use state" />
+                <img class="cs-screen-loop__frame" src="/images/NullState/Evolving/NullStateV2.png" alt="Active state" />
+              </div>
+            </div>
+            <div>
+              <p class="cs-screen-loop-col-label">Set-up-led</p>
+              <div class="cs-screen-loop">
+                <img class="cs-screen-loop__frame" src="/images/NullState/Evolving/SetUpLedNullStateV1.png" alt="Set-up-led initial state" />
+                <img class="cs-screen-loop__frame" src="/images/NullState/Evolving/NullStateV3.png" alt="First-use state" />
+                <img class="cs-screen-loop__frame" src="/images/NullState/Evolving/NullStateV2.png" alt="Active state" />
+              </div>
+            </div>
           </div>
           <div class="cs-screen-loop-labels">
             <span class="cs-screen-loop-label">Initial state</span>
@@ -215,33 +227,36 @@
       document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
     </script>
     <script>
-      // Screen loop: fade between frames every 4 seconds
+      // Screen loop: fade all loops in sync every 4 seconds
       (function () {
-        const frames = Array.from(document.querySelectorAll('.cs-screen-loop__frame'));
+        const loops  = Array.from(document.querySelectorAll('.cs-screen-loop'));
         const labels = Array.from(document.querySelectorAll('.cs-screen-loop-label'));
-        const placeholder = document.querySelector('.cs-screen-loop__placeholder');
-        if (!frames.length) return;
+        if (!loops.length) return;
 
-        // Only run if at least one image has actually loaded
-        let anyLoaded = false;
-        frames.forEach(f => { if (f.complete && f.naturalWidth > 0) anyLoaded = true; });
-        frames.forEach(f => f.addEventListener('load', () => {
-          if (!anyLoaded) { anyLoaded = true; init(); }
-        }));
-        if (anyLoaded) init();
+        const frameCount = loops[0].querySelectorAll('.cs-screen-loop__frame').length;
+        let current = 0;
+
+        // Start once any image in any loop has loaded
+        let started = false;
+        const allImgs = Array.from(document.querySelectorAll('.cs-screen-loop__frame'));
+        allImgs.forEach(img => {
+          if (img.complete && img.naturalWidth > 0 && !started) { started = true; init(); }
+          img.addEventListener('load', () => { if (!started) { started = true; init(); } });
+        });
 
         function init() {
-          if (placeholder) placeholder.style.display = 'none';
-          let current = 0;
           activate(0);
           setInterval(() => {
-            current = (current + 1) % frames.length;
+            current = (current + 1) % frameCount;
             activate(current);
           }, 4000);
         }
 
         function activate(idx) {
-          frames.forEach((f, i) => f.classList.toggle('is-active', i === idx));
+          loops.forEach(loop => {
+            Array.from(loop.querySelectorAll('.cs-screen-loop__frame'))
+              .forEach((f, i) => f.classList.toggle('is-active', i === idx));
+          });
           labels.forEach((l, i) => l.classList.toggle('is-active', i === idx));
         }
       })();
