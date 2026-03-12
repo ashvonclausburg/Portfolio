@@ -42,12 +42,28 @@
   display: block;
 }
 
-.cs-label {
-  font-size: 12px;
+/* ── Eyebrow label base — shared across all label/num/eyebrow elements ── */
+.cs-label,
+.cs-section-label,
+.cs-meta-label,
+.cs-problem-num,
+.cs-rec-num,
+.cs-solution-num,
+.cs-finding-label,
+.cs-journey-label,
+.cs-hypothesis-label,
+.cs-pros-label,
+.cs-cons-label {
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #999;
+}
+
+.cs-label {
+  font-size: 12px;
+  letter-spacing: 0.12em;
   margin-bottom: 24px;
 }
 
@@ -78,13 +94,7 @@
   gap: 4px;
 }
 
-.cs-meta-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #999;
-}
+.cs-meta-label {}
 
 .cs-meta-value {
   font-size: 15px;
@@ -108,11 +118,7 @@
 }
 
 .cs-section-label {
-  font-size: 11px;
-  font-weight: 600;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #999;
   margin-bottom: 16px;
 }
 
@@ -247,13 +253,7 @@
   gap: 12px;
 }
 
-.cs-problem-num {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #999;
-}
+.cs-problem-num {}
 
 .cs-problem-card h3 {
   font-size: 20px;
@@ -276,11 +276,6 @@
 }
 
 .cs-hypothesis-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #999;
   margin-bottom: 10px;
 }
 
@@ -301,10 +296,6 @@
 
 .cs-journey-label {
   font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #999;
   margin-bottom: 20px;
 }
 
@@ -349,10 +340,6 @@
 }
 
 .cs-pros-label, .cs-cons-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
   margin-bottom: 10px;
 }
 
@@ -374,11 +361,6 @@
 }
 
 .cs-finding-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #999;
   margin-bottom: 12px;
 }
 
@@ -406,13 +388,7 @@
   background: #fff;
 }
 
-.cs-rec-num {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #999;
-}
+.cs-rec-num {}
 
 .cs-rec h3 { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
 .cs-rec p  { font-size: 15px; line-height: 1.65; color: #555; }
@@ -481,13 +457,7 @@
   margin-bottom: 20px;
 }
 
-.cs-solution-num {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #999;
-}
+.cs-solution-num {}
 
 .cs-solution-label h3 { font-size: 24px; font-weight: 600; letter-spacing: -0.01em; }
 
@@ -548,7 +518,7 @@
 }
 
 .cs-back { font-size: 15px; font-weight: 500; color: #111; transition: color 0.2s; }
-.cs-back:hover { color: #0099ff; }
+.cs-back:hover { color: var(--color-accent); }
 .cs-footer-copy { color: #bbb; }
 
 /* Journey image + lightbox */
