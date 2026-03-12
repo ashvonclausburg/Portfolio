@@ -51,8 +51,48 @@
       </div>
     </header>
 
-    <!-- APPROACHES SECTION -->
+    <!-- BACKGROUND / PROBLEM SECTION -->
     <section class="cs-section">
+      <div class="cs-section-inner">
+        <p class="cs-section-label">Background</p>
+        <h2 class="cs-section-title">The null state wasn't working.</h2>
+        <p class="cs-body">The Invoices funnel had a 55% drop-off rate from sellers landing on the product page to sending their first invoice. Rather than offering guidance or context, the dashboard simply showed them empty data — leaving new sellers with no clear path forward.</p>
+        <div class="cs-img-placeholder">Export: <code>null-state-old-funnel.png</code> — screenshot of old Invoices overview page</div>
+      </div>
+    </section>
+
+    <!-- RESEARCH SECTION -->
+    <section class="cs-section cs-section--gray">
+      <div class="cs-section-inner">
+        <p class="cs-section-label">Research</p>
+        <h2 class="cs-section-title">What we knew — and what we didn't.</h2>
+        <p class="cs-body">We had a hypothesis: if we gave sellers more context on the Invoices Overview page — about the product, its features, and the benefits — more of them would send their first invoice. But the page needed to work for two very different users.</p>
+        <div class="cs-two-col">
+          <div class="cs-problem-card">
+            <span class="cs-problem-num">What we knew</span>
+            <h3>Two distinct audiences</h3>
+            <p>Sellers who signed up specifically for Invoices needed a clearer CTA. Sellers casually exploring Square needed context on why Invoices would help their business. Both groups would benefit from understanding features and functionality.</p>
+          </div>
+          <div class="cs-problem-card">
+            <span class="cs-problem-num">What we didn't know</span>
+            <h3>Why sellers were dropping off</h3>
+            <p>We had limited directional data on why sellers were abandoning the funnel before sending their first invoice, or what kind of content would actually move them to act.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETITIVE AUDIT SECTION -->
+    <section class="cs-section">
+      <div class="cs-section-inner">
+        <p class="cs-section-label">Competitive Audit</p>
+        <h2 class="cs-section-title">Understanding the landscape.</h2>
+        <p class="cs-body">We audited null states across five competitors and several internal Square product pages. Three repeatable patterns emerged — each with a distinct tradeoff between user control and information density.</p>
+      </div>
+    </section>
+
+    <!-- APPROACHES SECTION -->
+    <section class="cs-section cs-section--gray">
       <div class="cs-section-inner">
         <p class="cs-section-label">Exploration</p>
         <h2 class="cs-section-title">Three approaches.</h2>
@@ -160,6 +200,50 @@
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- CROSS-FUNCTIONAL BRAINSTORM SECTION -->
+    <section class="cs-section">
+      <div class="cs-section-inner">
+        <p class="cs-section-label">Process</p>
+        <h2 class="cs-section-title">Cross-functional brainstorm.</h2>
+        <p class="cs-body">With the evolving page direction decided, we ran a cross-functional session with engineering, product, marketing, and design to align on content strategy. Three questions framed the conversation:</p>
+        <div class="cs-recs">
+          <div class="cs-rec">
+            <span class="cs-rec-num">01</span>
+            <h3>How do we get sellers started?</h3>
+            <p>What first step — or sequence of steps — should we encourage Invoice-ready sellers to take?</p>
+          </div>
+          <div class="cs-rec">
+            <span class="cs-rec-num">02</span>
+            <h3>What should sellers know?</h3>
+            <p>Which product features are most worth calling out to sellers who are just exploring Invoices?</p>
+          </div>
+          <div class="cs-rec">
+            <span class="cs-rec-num">03</span>
+            <h3>Why should they use it?</h3>
+            <p>What business benefits would resonate most with sellers who haven't yet committed to using Invoices?</p>
+          </div>
+        </div>
+        <div class="cs-two-col" style="margin-top: 32px;">
+          <div class="cs-img-placeholder" style="margin: 0; min-height: 220px;">Export: <code>brainstorm-1.png</code><br>Screenshot 2026-03-12 at 1.21.21 PM</div>
+          <div class="cs-img-placeholder" style="margin: 0; min-height: 220px;">Export: <code>brainstorm-2.png</code><br>Screenshot 2026-03-12 at 1.21.34 PM</div>
+        </div>
+        <div class="cs-img-placeholder" style="min-height: 220px;">Export: <code>brainstorm-3.png</code><br>Screenshot 2026-03-12 at 1.21.53 PM</div>
+      </div>
+    </section>
+
+    <!-- A/B TESTING SECTION -->
+    <section class="cs-section cs-section--gray">
+      <div class="cs-section-inner">
+        <p class="cs-section-label">A/B Testing</p>
+        <h2 class="cs-section-title">Two bets, one experiment.</h2>
+        <p class="cs-body">Given how different our two target audiences were, we decided to A/B test two distinct approaches rather than try to serve both with a single page. One marketing-led page emphasizing high-level product benefits, and one set-up-led page focused on guiding sellers through their first steps.</p>
+        <div class="cs-hypothesis">
+          <p class="cs-hypothesis-label">Hypothesis</p>
+          <p class="cs-hypothesis-text">Sellers shown a more contextual, action-oriented null state will be more likely to send their first invoice than sellers shown the current empty dashboard.</p>
+        </div>
       </div>
     </section>
 
