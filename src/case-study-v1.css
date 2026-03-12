@@ -742,6 +742,9 @@
 /* ── Screen loop / crossfade ── */
 .cs-screen-loop-wrap {
   margin-top: 40px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cs-screen-loop {
