@@ -739,6 +739,90 @@
   }
 }
 
+/* ── Screen loop / crossfade ── */
+.cs-screen-loop-wrap {
+  margin-top: 40px;
+}
+
+.cs-screen-loop {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.cs-screen-loop__frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.cs-screen-loop__frame.is-active {
+  opacity: 1;
+}
+
+.cs-screen-loop__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #bbb;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.cs-screen-loop-labels {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  margin-top: 20px;
+}
+
+.cs-screen-loop-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #bbb;
+  transition: color 0.3s ease;
+  padding: 4px 0;
+  position: relative;
+}
+
+.cs-screen-loop-label::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 2px;
+  width: 0;
+  transition: width 0.4s ease;
+  margin-top: 5px;
+}
+
+.cs-screen-loop-label.is-active {
+  color: #111;
+  font-weight: 600;
+}
+
+.cs-screen-loop-label.is-active::after {
+  width: 100%;
+}
+
+.cs-screen-loop-sep {
+  margin: 0 12px;
+  color: #ddd;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
 @media (max-width: 768px) {
   .cs-hero, .cs-section, .cs-footer { padding-left: 24px; padding-right: 24px; }
   .cs-hero-inner { flex-direction: column; gap: 40px; }

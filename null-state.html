@@ -83,9 +83,9 @@
           <div class="cs-approach-imgs">
             <div>
               <p class="cs-approach-ref-label">Honeybook</p>
-              <div class="cs-approach-ref-img cs-img-placeholder" style="min-height: 160px; margin: 0; border-radius: 10px;"></div>
+              <div class="cs-approach-ref-img"><img src="/images/NullState/ref-honeybook-popup.png" alt="Honeybook popup onboarding" /></div>
             </div>
-            <div class="cs-approach-ref-img cs-img-placeholder" style="min-height: 140px; margin: 0; border-radius: 10px;"></div>
+            <div class="cs-approach-ref-img"><img src="/images/NullState/ref-honeybook-whats-new.png" alt="Honeybook what's new panel" /></div>
           </div>
         </div>
 
@@ -115,11 +115,11 @@
           <div class="cs-approach-imgs">
             <div>
               <p class="cs-approach-ref-label">Zoho</p>
-              <div class="cs-approach-ref-img cs-img-placeholder" style="min-height: 160px; margin: 0; border-radius: 10px;"></div>
+              <div class="cs-approach-ref-img"><img src="/images/NullState/ref-zoho-setup.png" alt="Zoho setup page" /></div>
             </div>
             <div>
               <p class="cs-approach-ref-label">Mailchimp</p>
-              <div class="cs-approach-ref-img cs-img-placeholder" style="min-height: 140px; margin: 0; border-radius: 10px;"></div>
+              <div class="cs-approach-ref-img"><img src="/images/NullState/ref-mailchimp-automations.png" alt="Mailchimp empty state" /></div>
             </div>
           </div>
         </div>
@@ -151,15 +151,39 @@
           <div class="cs-approach-imgs">
             <div>
               <p class="cs-approach-ref-label">Mailchimp — null state</p>
-              <div class="cs-approach-ref-img cs-img-placeholder" style="min-height: 160px; margin: 0; border-radius: 10px;"></div>
+              <div class="cs-approach-ref-img"><img src="/images/NullState/ref-mailchimp-null.png" alt="Mailchimp null state" /></div>
             </div>
             <div>
               <p class="cs-approach-ref-label">Mailchimp — after first use</p>
-              <div class="cs-approach-ref-img cs-img-placeholder" style="min-height: 140px; margin: 0; border-radius: 10px;"></div>
+              <div class="cs-approach-ref-img"><img src="/images/NullState/ref-mailchimp-active.png" alt="Mailchimp active state" /></div>
             </div>
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- FINAL DESIGN SECTION -->
+    <section class="cs-section cs-section--gray">
+      <div class="cs-section-inner">
+        <p class="cs-section-label">Final Design</p>
+        <h2 class="cs-section-title">How the page evolves.</h2>
+        <p class="cs-body">The dynamic null state adapts as sellers engage. The page opens with a marketing-forward layout built for new users, shifts to an action-oriented view after the first send, then settles into the standard product experience once the seller is active.</p>
+        <div class="cs-screen-loop-wrap">
+          <div class="cs-screen-loop" id="cs-screen-loop">
+            <div class="cs-screen-loop__placeholder">Screenshots coming soon</div>
+            <img class="cs-screen-loop__frame" src="/images/NullState/state-initial.png" alt="Initial null state" />
+            <img class="cs-screen-loop__frame" src="/images/NullState/state-first-use.png" alt="First-use state" />
+            <img class="cs-screen-loop__frame" src="/images/NullState/state-active.png" alt="Active state" />
+          </div>
+          <div class="cs-screen-loop-labels">
+            <span class="cs-screen-loop-label">Initial state</span>
+            <span class="cs-screen-loop-sep">→</span>
+            <span class="cs-screen-loop-label">First-use</span>
+            <span class="cs-screen-loop-sep">→</span>
+            <span class="cs-screen-loop-label">Active</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -189,6 +213,38 @@
         document.body.style.overflow = '';
       }
       document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    </script>
+    <script>
+      // Screen loop: fade between frames every 4 seconds
+      (function () {
+        const frames = Array.from(document.querySelectorAll('.cs-screen-loop__frame'));
+        const labels = Array.from(document.querySelectorAll('.cs-screen-loop-label'));
+        const placeholder = document.querySelector('.cs-screen-loop__placeholder');
+        if (!frames.length) return;
+
+        // Only run if at least one image has actually loaded
+        let anyLoaded = false;
+        frames.forEach(f => { if (f.complete && f.naturalWidth > 0) anyLoaded = true; });
+        frames.forEach(f => f.addEventListener('load', () => {
+          if (!anyLoaded) { anyLoaded = true; init(); }
+        }));
+        if (anyLoaded) init();
+
+        function init() {
+          if (placeholder) placeholder.style.display = 'none';
+          let current = 0;
+          activate(0);
+          setInterval(() => {
+            current = (current + 1) % frames.length;
+            activate(current);
+          }, 4000);
+        }
+
+        function activate(idx) {
+          frames.forEach((f, i) => f.classList.toggle('is-active', i === idx));
+          labels.forEach((l, i) => l.classList.toggle('is-active', i === idx));
+        }
+      })();
     </script>
   </body>
 </html>
