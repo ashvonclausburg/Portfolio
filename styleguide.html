@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style Guide — Ashley vonClausburg</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/type.css" />
+    <link rel="stylesheet" href="/src/case-study-v1.css" />
+    <style>
+      /* ── Styleguide scaffolding only — not part of the design system ── */
+      .sg-page       { max-width: 960px; margin: 0 auto; padding: 80px 40px; }
+      .sg-section    { margin-bottom: 80px; }
+      .sg-title      { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+                       color: #bbb; border-bottom: 1px solid #f0f0f0; padding-bottom: 12px; margin-bottom: 40px; }
+      .sg-row        { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+      .sg-swatch     { display: flex; flex-direction: column; gap: 8px; min-width: 120px; }
+      .sg-swatch-block { width: 120px; height: 72px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.06); }
+      .sg-swatch-name  { font-size: 11px; font-weight: 600; color: #999; }
+      .sg-swatch-value { font-size: 11px; color: #bbb; font-family: monospace; }
+      .sg-type-row   { display: flex; align-items: baseline; gap: 24px; padding: 20px 0;
+                       border-bottom: 1px solid #f5f5f5; }
+      .sg-type-row:last-child { border-bottom: none; }
+      .sg-type-meta  { min-width: 160px; flex-shrink: 0; font-size: 11px; color: #bbb; font-family: monospace; line-height: 1.6; }
+      .sg-space-row  { display: flex; align-items: center; gap: 16px; padding: 8px 0; }
+      .sg-space-block { background: #006aff; height: 8px; border-radius: 4px; opacity: 0.15; }
+      .sg-space-label { font-size: 11px; color: #bbb; font-family: monospace; white-space: nowrap; }
+      .sg-divider    { border: none; border-top: 2px solid #f0f0f0; margin: 80px 0; }
+    </style>
+  </head>
+  <body>
+
+    <nav>
+      <a class="nav-name" href="/">Ashley vonClausburg</a>
+      <div class="nav-links">
+        <a href="/#work">Work</a>
+        <a href="/#about">About</a>
+        <a href="mailto:ashley@vonclausburg.com">Contact</a>
+      </div>
+    </nav>
+
+    <div class="sg-page">
+
+      <div style="margin-bottom: 64px;">
+        <p class="cs-label">Internal Reference</p>
+        <h1 style="font-size: 48px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px;">Style Guide</h1>
+        <p style="font-size: 17px; color: #666; line-height: 1.6;">All tokens, typography, and components used across the portfolio. Use this as a Figma reference.</p>
+      </div>
+
+      <hr class="sg-divider" />
+
+      <!-- ── 1. COLOR ── -->
+      <div class="sg-section">
+        <p class="sg-title">01 — Color</p>
+
+        <p class="sg-title" style="border: none; padding: 0; margin-bottom: 20px; margin-top: 0;">Text</p>
+        <div class="sg-row" style="margin-bottom: 40px;">
+          <div class="sg-swatch">
+            <div class="sg-swatch-block" style="background: #000;"></div>
+            <span class="sg-swatch-name">Text</span>
+            <span class="sg-swatch-value">--color-text<br>#000000</span>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch-block" style="background: rgba(0,0,0,0.75);"></div>
+            <span class="sg-swatch-name">Text Soft</span>
+            <span class="sg-swatch-value">--color-text-soft<br>rgba(0,0,0,.75)</span>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch-block" style="background: rgba(0,0,0,0.55);"></div>
+            <span class="sg-swatch-name">Text Muted</span>
+            <span class="sg-swatch-value">--color-text-muted<br>rgba(0,0,0,.55)</span>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch-block" style="background: rgba(0,0,0,0.4);"></div>
+            <span class="sg-swatch-name">Text Faint</span>
+            <span class="sg-swatch-value">--color-text-faint<br>rgba(0,0,0,.4) / #999</span>
+          </div>
+        </div>
+
+        <p class="sg-title" style="border: none; padding: 0; margin-bottom: 20px; margin-top: 0;">Brand &amp; UI</p>
+        <div class="sg-row" style="margin-bottom: 40px;">
+          <div class="sg-swatch">
+            <div class="sg-swatch-block" style="background: #006aff;"></div>
+            <span class="sg-swatch-name">Accent</span>
+            <span class="sg-swatch-value">--color-accent<br>#006aff</span>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch-block" style="background: #fff; border: 1px solid #eee;"></div>
+            <span class="sg-swatch-name">Surface</span>
+            <span class="sg-swatch-value">#ffffff</span>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch-block" style="background: #fafafa;"></div>
+            <span class="sg-swatch-name">Surface Gray</span>
+            <span class="sg-swatch-value">#fafafa</span>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch-block" style="background: #f5f5f5;"></div>
+            <span class="sg-swatch-name">Background</span>
+            <span class="sg-swatch-value">#f5f5f5</span>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch-block" style="background: #f0f0f0;"></div>
+            <span class="sg-swatch-name">Border Light</span>
+            <span class="sg-swatch-value">#f0f0f0</span>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch-block" style="background: #eee;"></div>
+            <span class="sg-swatch-name">Border</span>
+            <span class="sg-swatch-value">#eeeeee</span>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch-block" style="background: #000;"></div>
+            <span class="sg-swatch-name">Outcome BG</span>
+            <span class="sg-swatch-value">#000000</span>
+          </div>
+        </div>
+
+        <p class="sg-title" style="border: none; padding: 0; margin-bottom: 20px; margin-top: 0;">Semantic (journey steps)</p>
+        <div class="sg-row">
+          <div class="sg-swatch">
+            <div class="sg-swatch-block" style="background: #fff1f0;"></div>
+            <span class="sg-swatch-name">Bad / Friction</span>
+            <span class="sg-swatch-value">#fff1f0 / #c0392b</span>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch-block" style="background: #f0faf5;"></div>
+            <span class="sg-swatch-name">Good / Success</span>
+            <span class="sg-swatch-value">#f0faf5 / #1a7a4a</span>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch-block" style="background: #fffbf0;"></div>
+            <span class="sg-swatch-name">Warning</span>
+            <span class="sg-swatch-value">#fffbf0 / #b7791f</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="sg-divider" />
+
+      <!-- ── 2. TYPOGRAPHY ── -->
+      <div class="sg-section">
+        <p class="sg-title">02 — Typography</p>
+        <p style="font-size: 13px; color: #bbb; margin-bottom: 32px; font-family: monospace;">Font: Inter — weights 400, 500, 600, 700, 900</p>
+
+        <!-- Hero title -->
+        <div class="sg-type-row">
+          <div class="sg-type-meta">cs-title<br>clamp(48–96px)<br>weight 700<br>tracking −0.04em</div>
+          <h1 class="cs-title" style="margin: 0;">Case Study Title</h1>
+        </div>
+
+        <!-- Headline (homepage) -->
+        <div class="sg-type-row">
+          <div class="sg-type-meta">.headline<br>clamp(64–160px)<br>weight 700<br>tracking −0.04em</div>
+          <p style="font-size: clamp(40px, 7vw, 80px); font-weight: 700; line-height: 1; letter-spacing: -0.04em;">Designer &amp;<br>Developer.</p>
+        </div>
+
+        <!-- Section title -->
+        <div class="sg-type-row">
+          <div class="sg-type-meta">cs-section-title<br>clamp(28–40px)<br>weight 700<br>tracking −0.02em</div>
+          <h2 class="cs-section-title" style="margin: 0;">Section Title</h2>
+        </div>
+
+        <!-- Subsection title -->
+        <div class="sg-type-row">
+          <div class="sg-type-meta">cs-subsection-title<br>22px<br>weight 600<br>tracking −0.01em</div>
+          <h3 class="cs-subsection-title" style="margin: 0;">Subsection Title</h3>
+        </div>
+
+        <!-- Subtitle -->
+        <div class="sg-type-row">
+          <div class="sg-type-meta">cs-subtitle<br>20px<br>weight 400<br>lh 1.6</div>
+          <p class="cs-subtitle" style="margin: 0;">Hero subtitle — Supporting description text goes here.</p>
+        </div>
+
+        <!-- Body -->
+        <div class="sg-type-row">
+          <div class="sg-type-meta">cs-body<br>17px<br>weight 400<br>lh 1.75</div>
+          <p class="cs-body" style="margin: 0; max-width: 560px;">Body copy. Used for narrative paragraphs in case study sections. Comfortable reading size with generous line height.</p>
+        </div>
+
+        <!-- Project title -->
+        <div class="sg-type-row">
+          <div class="sg-type-meta">.project-title<br>17px<br>weight 600<br>lh 1.3</div>
+          <span class="project-title">Reducing Risk Freeze Rates</span>
+        </div>
+
+        <!-- Project desc -->
+        <div class="sg-type-row">
+          <div class="sg-type-meta">.project-desc<br>13px<br>weight 400<br>color #999</div>
+          <span class="project-desc">Reduced seller churn by 4% through proactive identity verification</span>
+        </div>
+
+        <!-- Meta value -->
+        <div class="sg-type-row">
+          <div class="sg-type-meta">cs-meta-value<br>15px / weight 500<br>cs-meta-label<br>11px / 600 / upper</div>
+          <div class="cs-meta-row" style="gap: 32px;">
+            <div class="cs-meta-item">
+              <span class="cs-meta-label">Company</span>
+              <span class="cs-meta-value">Square</span>
+            </div>
+            <div class="cs-meta-item">
+              <span class="cs-meta-label">Role</span>
+              <span class="cs-meta-value">Product Designer</span>
+            </div>
+            <div class="cs-meta-item">
+              <span class="cs-meta-label">Year</span>
+              <span class="cs-meta-value">2024</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Eyebrow -->
+        <div class="sg-type-row">
+          <div class="sg-type-meta">cs-label / cs-section-label<br>11–12px / 600<br>tracking 0.1–0.12em<br>uppercase / #999</div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <p class="cs-label" style="margin: 0;">Case Study · UX / Usability</p>
+            <p class="cs-section-label" style="margin: 0;">Section Label</p>
+          </div>
+        </div>
+
+        <!-- Stat number -->
+        <div class="sg-type-row">
+          <div class="sg-type-meta">cs-stat-number<br>48px / weight 700<br>cs-outcome-number<br>80px / weight 700</div>
+          <div style="display: flex; gap: 48px; align-items: baseline;">
+            <span class="cs-stat-number">4%</span>
+            <span class="cs-outcome-number" style="color: #000;">80%</span>
+          </div>
+        </div>
+
+        <!-- Pills -->
+        <div class="sg-type-row">
+          <div class="sg-type-meta">.pill<br>11px / 600<br>tracking 0.05em<br>uppercase</div>
+          <div class="project-pills">
+            <span class="pill">UX</span>
+            <span class="pill">Square</span>
+            <span class="pill">2024</span>
+            <span class="pill">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="sg-divider" />
+
+      <!-- ── 3. SPACING ── -->
+      <div class="sg-section">
+        <p class="sg-title">03 — Spacing Scale</p>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div class="sg-space-row"><div class="sg-space-block" style="width: 4px;"></div><span class="sg-space-label">--space-1 → 4px</span></div>
+          <div class="sg-space-row"><div class="sg-space-block" style="width: 8px;"></div><span class="sg-space-label">--space-2 → 8px</span></div>
+          <div class="sg-space-row"><div class="sg-space-block" style="width: 12px;"></div><span class="sg-space-label">--space-3 → 12px</span></div>
+          <div class="sg-space-row"><div class="sg-space-block" style="width: 16px;"></div><span class="sg-space-label">--space-4 → 16px</span></div>
+          <div class="sg-space-row"><div class="sg-space-block" style="width: 24px;"></div><span class="sg-space-label">--space-6 → 24px</span></div>
+          <div class="sg-space-row"><div class="sg-space-block" style="width: 32px;"></div><span class="sg-space-label">--space-8 → 32px</span></div>
+          <div class="sg-space-row"><div class="sg-space-block" style="width: 40px;"></div><span class="sg-space-label">--space-10 → 40px</span></div>
+          <div class="sg-space-row"><div class="sg-space-block" style="width: 48px;"></div><span class="sg-space-label">--space-12 → 48px</span></div>
+          <div class="sg-space-row"><div class="sg-space-block" style="width: 64px;"></div><span class="sg-space-label">--space-16 → 64px</span></div>
+          <div class="sg-space-row"><div class="sg-space-block" style="width: 80px;"></div><span class="sg-space-label">--space-20 → 80px</span></div>
+        </div>
+      </div>
+
+      <hr class="sg-divider" />
+
+      <!-- ── 4. COMPONENTS ── -->
+      <div class="sg-section">
+        <p class="sg-title">04 — Project Cards</p>
+        <div class="project-grid" style="grid-template-columns: repeat(2, 1fr);">
+          <a class="project-card is-visible" href="#">
+            <div class="project-thumb">
+              <img src="https://placehold.co/800x500/e8f0fe/4a7aff?text=Thumbnail" alt="Card thumbnail" />
+            </div>
+            <div class="project-card-body">
+              <div class="project-pills">
+                <span class="pill">UX</span>
+                <span class="pill">Square</span>
+                <span class="pill">2024</span>
+              </div>
+              <span class="project-title">Project Card Title</span>
+              <span class="project-desc">Short description of the project outcome or focus area</span>
+            </div>
+          </a>
+          <a class="project-card is-visible" href="#">
+            <div class="project-thumb" style="background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+              <span style="font-size: 13px; color: #bbb; font-weight: 500;">Coming Soon</span>
+            </div>
+            <div class="project-card-body">
+              <div class="project-pills">
+                <span class="pill">Brand</span>
+                <span class="pill">Coming Soon</span>
+              </div>
+              <span class="project-title">Placeholder Card</span>
+              <span class="project-desc">Details coming soon</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- end .sg-page -->
+
+    <!-- ── Case study components rendered in full-width sections ── -->
+
+    <!-- Stats -->
+    <section class="cs-section">
+      <div class="cs-section-inner">
+        <p class="sg-title" style="border-bottom: 1px solid #f0f0f0; padding-bottom: 12px; margin-bottom: 40px;">05 — Stats Grid</p>
+        <div class="cs-stats">
+          <div class="cs-stat">
+            <span class="cs-stat-number">4%</span>
+            <span class="cs-stat-desc">Reduction in new seller churn</span>
+          </div>
+          <div class="cs-stat">
+            <span class="cs-stat-number">73%</span>
+            <span class="cs-stat-desc">Completion rate for proactive flow</span>
+          </div>
+          <div class="cs-stat">
+            <span class="cs-stat-number">~2 min</span>
+            <span class="cs-stat-desc">Median time to complete verification</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Callout -->
+    <section class="cs-section">
+      <div class="cs-section-inner">
+        <p class="sg-title" style="border-bottom: 1px solid #f0f0f0; padding-bottom: 12px; margin-bottom: 40px;">06 — Callout Band</p>
+        <div class="cs-callout">
+          <span class="cs-callout-stat">4% churn reduction</span>
+          <span class="cs-callout-text">Proactive identity verification reduced new seller risk freezes within the first 30 days.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quotes -->
+    <section class="cs-section cs-section--gray">
+      <div class="cs-section-inner">
+        <p class="sg-title" style="border-bottom: 1px solid #eee; padding-bottom: 12px; margin-bottom: 40px;">07 — Quote Cards</p>
+        <div class="cs-quotes">
+          <div class="cs-quote">
+            <p>"I didn't know I had to do anything — I just couldn't take a payment and didn't know why."</p>
+            <cite>Participant 3 — Usability Study</cite>
+          </div>
+          <div class="cs-quote">
+            <p>"The email made it feel urgent but I wasn't sure if it was real or spam."</p>
+            <cite>Participant 7 — Usability Study</cite>
+          </div>
+          <div class="cs-quote cs-quote--full">
+            <p>"Full-width quote card — spans both columns. Good for a key insight or standout finding that deserves more space."</p>
+            <cite>Research Participant</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem cards + Hypothesis -->
+    <section class="cs-section">
+      <div class="cs-section-inner">
+        <p class="sg-title" style="border-bottom: 1px solid #f0f0f0; padding-bottom: 12px; margin-bottom: 40px;">08 — Problem Cards &amp; Hypothesis</p>
+        <div class="cs-two-col">
+          <div class="cs-problem-card">
+            <span class="cs-problem-num">Problem 01</span>
+            <h3>Unclear trigger</h3>
+            <p>Sellers don't understand why their account is frozen or what action is needed from them.</p>
+          </div>
+          <div class="cs-problem-card">
+            <span class="cs-problem-num">Problem 02</span>
+            <h3>Wrong timing</h3>
+            <p>The verification request arrives after the seller has already tried to take a payment.</p>
+          </div>
+        </div>
+        <div class="cs-hypothesis">
+          <p class="cs-hypothesis-label">Hypothesis</p>
+          <p class="cs-hypothesis-text">If we prompt sellers to verify their identity before they hit a freeze, they will complete the flow at a higher rate and experience less churn.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Finding -->
+    <section class="cs-section cs-section--gray">
+      <div class="cs-section-inner">
+        <p class="sg-title" style="border-bottom: 1px solid #eee; padding-bottom: 12px; margin-bottom: 40px;">09 — Finding &amp; Recommendation Cards</p>
+        <div class="cs-finding">
+          <p class="cs-finding-label">Key Finding</p>
+          <p class="cs-finding-text">73% of sellers who saw the proactive prompt completed identity verification within 48 hours — compared to 31% in the reactive condition.</p>
+        </div>
+        <div class="cs-recs" style="margin-top: 32px;">
+          <div class="cs-rec">
+            <span class="cs-rec-num">Rec 01</span>
+            <h3>Surface the prompt earlier</h3>
+            <p>Show the verification request at onboarding, not at the point of payment failure.</p>
+          </div>
+          <div class="cs-rec">
+            <span class="cs-rec-num">Rec 02</span>
+            <h3>Reduce copy friction</h3>
+            <p>Replace legal-heavy language with plain, action-oriented instructions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journey steps -->
+    <section class="cs-section">
+      <div class="cs-section-inner">
+        <p class="sg-title" style="border-bottom: 1px solid #f0f0f0; padding-bottom: 12px; margin-bottom: 40px;">10 — Journey Map Steps</p>
+        <div class="cs-journey">
+          <p class="cs-journey-label">Current Experience</p>
+          <div class="cs-journey-steps">
+            <div class="cs-step cs-step--neutral"><span class="cs-step-emoji">📦</span>Sign up</div>
+            <div class="cs-step cs-step--neutral"><span class="cs-step-emoji">💳</span>First sale</div>
+            <div class="cs-step cs-step--bad"><span class="cs-step-emoji">🚫</span>Freeze</div>
+            <div class="cs-step cs-step--warning"><span class="cs-step-emoji">📧</span>Email</div>
+            <div class="cs-step cs-step--neutral"><span class="cs-step-emoji">🪪</span>Verify</div>
+            <div class="cs-step cs-step--good"><span class="cs-step-emoji">✅</span>Unfreeze</div>
+          </div>
+          <div class="cs-journey-pros-cons">
+            <div>
+              <p class="cs-pros-label">What worked</p>
+              <ul><li>Sellers eventually completed the flow</li><li>Email had decent open rates</li></ul>
+            </div>
+            <div>
+              <p class="cs-cons-label">Pain points</p>
+              <ul><li>Sellers lost trust during the freeze</li><li>Support tickets spiked</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outcome section -->
+    <section class="cs-section cs-outcome">
+      <div class="cs-section-inner">
+        <p class="sg-title" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px; margin-bottom: 40px; color: rgba(255,255,255,0.3);">11 — Outcome Section (Dark)</p>
+        <p class="cs-section-label">Outcome</p>
+        <h2 class="cs-section-title">The numbers.</h2>
+        <div class="cs-outcome-stats">
+          <div class="cs-outcome-stat">
+            <span class="cs-outcome-number">4%</span>
+            <span class="cs-outcome-label">Churn reduction</span>
+          </div>
+          <div class="cs-outcome-stat">
+            <span class="cs-outcome-number">73%</span>
+            <span class="cs-outcome-label">Completion rate</span>
+          </div>
+          <div class="cs-outcome-stat">
+            <span class="cs-outcome-number">−40%</span>
+            <span class="cs-outcome-label">Support tickets</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image placeholder -->
+    <section class="cs-section">
+      <div class="cs-section-inner">
+        <p class="sg-title" style="border-bottom: 1px solid #f0f0f0; padding-bottom: 12px; margin-bottom: 40px;">12 — Image &amp; Layout Utilities</p>
+        <div class="cs-img-placeholder">Image placeholder — replace with real asset</div>
+        <div class="cs-two-col" style="margin-top: 24px;">
+          <div class="cs-img-placeholder" style="margin: 0;">Left column</div>
+          <div class="cs-img-placeholder" style="margin: 0;">Right column</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="cs-footer">
+      <a href="/" class="cs-back-link">← Back to work</a>
+      <span class="cs-footer-copy">Style guide — internal reference only</span>
+    </footer>
+
+  </body>
+</html>
