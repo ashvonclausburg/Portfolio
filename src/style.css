@@ -196,6 +196,23 @@ nav {
   transform: scale(1.04);
 }
 
+.project-card--placeholder {
+  pointer-events: none;
+  opacity: 0.55;
+}
+.project-thumb--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+}
+.project-thumb-soon {
+  font-size: 13px;
+  font-weight: 500;
+  color: #999;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
 
 .project-card-body {
   padding: 18px 20px 22px;

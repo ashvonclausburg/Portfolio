@@ -29,7 +29,7 @@
         <div class="cs-hero-text">
           <p class="cs-label">Case Study · Product Design</p>
           <h1 class="cs-title">Invoices<br>Null State Redesign</h1>
-          <p class="cs-subtitle">Using insights and instincts, increased the invoices null state CTR by ~20%</p>
+          <p class="cs-subtitle">Using research insights and product instincts to increase the invoices null state CTR by ~20%</p>
           <div class="cs-meta-row">
             <div class="cs-meta-item">
               <span class="cs-meta-label">Company</span>
@@ -55,66 +55,46 @@
     <section class="cs-section">
       <div class="cs-section-inner">
         <p class="cs-section-label">Background</p>
-        <h2 class="cs-section-title">The null state wasn't working.</h2>
-        <p class="cs-body">The Invoices funnel had a 55% drop-off rate from sellers landing on the product page to sending their first invoice. Rather than offering guidance or context, the dashboard simply showed them empty data, leaving new sellers with no clear path forward.</p>
-        <div class="cs-img-placeholder">Export: <code>null-state-old-funnel.png</code> (screenshot of old Invoices overview page)</div>
+        <h2 class="cs-section-title">The invoices funnel was leaking</h2>
+        <p class="cs-body">The Invoices funnel had a 55% drop-off rate from high-intent sellers landing on the product page to sending their first invoice. While there were a number of probable factors likely contributing to this, the team identified the current invoices null state as a clear opportunity to address the drop-off. In its current state, rather than offering guidance or context, the dashboard simply showed empty data, giving sellers no information to orient themselves or clear actions to take next.</p>
+        <img src="/images/NullState/PreviousNullState.jpg" alt="Previous Invoices null state showing an empty dashboard" class="cs-body-img" />
+        <p class="cs-body" style="margin-top: 32px;">We saw an opportunity: if we replaced the empty dashboard with contextual content about the product and its benefits, more sellers would take the next step. But the page needed to work for two very different audiences. Sellers who signed up specifically for Invoices needed a clearer path to action, while sellers casually exploring Square needed context on why Invoices would help their business. Additionally, we had limited objective data on what kind of content would most likely incentivize them to take action.</p>
       </div>
     </section>
 
-    <!-- RESEARCH SECTION -->
+    <!-- COMPETITIVE AUDIT / APPROACHES SECTION -->
     <section class="cs-section cs-section--gray">
-      <div class="cs-section-inner">
-        <p class="cs-section-label">Research</p>
-        <h2 class="cs-section-title">What we knew, and what we didn't.</h2>
-        <p class="cs-body">We had a hypothesis: if we gave sellers more context on the Invoices Overview page, covering the product, its features, and the benefits, so more of them would send their first invoice. But the page needed to work for two very different users.</p>
-        <div class="cs-two-col">
-          <div class="cs-problem-card">
-            <span class="cs-problem-num">What we knew</span>
-            <h3>Two distinct audiences</h3>
-            <p>Sellers who signed up specifically for Invoices needed a clearer CTA. Sellers casually exploring Square needed context on why Invoices would help their business. Both groups would benefit from understanding features and functionality.</p>
-          </div>
-          <div class="cs-problem-card">
-            <span class="cs-problem-num">What we didn't know</span>
-            <h3>Why sellers were dropping off</h3>
-            <p>We had limited directional data on why sellers were abandoning the funnel before sending their first invoice, or what kind of content would actually move them to act.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- COMPETITIVE AUDIT SECTION -->
-    <section class="cs-section">
       <div class="cs-section-inner">
         <p class="cs-section-label">Competitive Audit</p>
-        <h2 class="cs-section-title">Understanding the landscape.</h2>
-        <p class="cs-body">We audited null states across five competitors and several internal Square product pages. Three repeatable patterns emerged, each with a distinct tradeoff between user control and information density.</p>
-      </div>
-    </section>
+        <h2 class="cs-section-title">Understanding the landscape</h2>
+        <p class="cs-body">To better understand the null state landscape in terms of both messaging and structure, we audited pages across four competitors (Zoho, Mailchimp, Freshbooks, and Honeybook) as well as several internal Square product pages. Three structural patterns emerged, each with a distinct tradeoff between user control and information density.</p>
 
-    <!-- APPROACHES SECTION -->
-    <section class="cs-section cs-section--gray">
-      <div class="cs-section-inner">
-        <p class="cs-section-label">Exploration</p>
-        <h2 class="cs-section-title">Three approaches.</h2>
+        <!-- Approach tabs -->
+        <p class="cs-tabs-card-label">Product null state design patterns</p>
+        <div class="cs-tabs-card">
+        <div class="cs-tabs">
+          <button class="cs-tab is-active" data-tab="0"><span class="cs-problem-num">01</span> Pop-up overlay</button>
+          <button class="cs-tab" data-tab="1"><span class="cs-problem-num">02</span> Temporary setup page</button>
+          <button class="cs-tab" data-tab="2"><span class="cs-problem-num">03</span> Dynamic null state</button>
+        </div>
 
-        <!-- Approach 1 -->
-        <div class="cs-approach-card">
+        <!-- Panel 1: Pop-up overlay -->
+        <div class="cs-tab-panel is-active" data-panel="0">
           <div>
-            <p class="cs-problem-num">Approach 01</p>
             <h3 class="cs-approach-title">Pop-up overlay</h3>
             <p class="cs-approach-desc">An informational guide overlays the product page to walk users through key features, without changing the underlying layout.</p>
             <div class="cs-approach-pros-cons">
               <div class="cs-approach-pros-cons-col pros">
                 <strong>Pros</strong>
                 <ul>
-                  <li>Perfectly sequences information without layout changes</li>
-                  <li>Dismissible, so experts can skip immediately</li>
+                  <li>Sequences information without requiring layout changes to the actual product page</li>
+                  <li>Dismissible, so users that don't need the info can skip immediately to get started</li>
                 </ul>
               </div>
               <div class="cs-approach-pros-cons-col cons">
                 <strong>Cons</strong>
                 <ul>
-                  <li>High dismiss risk and hard to find again later</li>
+                  <li>High dismiss risk and the content is not discoverable for users to return to later</li>
                   <li>People hate pop-ups</li>
                 </ul>
               </div>
@@ -123,16 +103,18 @@
           <div class="cs-approach-imgs">
             <div>
               <p class="cs-approach-ref-label">Honeybook</p>
-              <div class="cs-approach-ref-img"><img src="/images/NullState/ref-honeybook-popup.png" alt="Honeybook popup onboarding" /></div>
+              <div class="cs-approach-ref-img"><img src="/images/NullState/CompetitiveAudit/PopUp1.png" alt="Honeybook pop-up overlay example" /></div>
             </div>
-            <div class="cs-approach-ref-img"><img src="/images/NullState/ref-honeybook-whats-new.png" alt="Honeybook what's new panel" /></div>
+            <div>
+              <p class="cs-approach-ref-label">Honeybook</p>
+              <div class="cs-approach-ref-img"><img src="/images/NullState/CompetitiveAudit/PopUp2.png" alt="Honeybook pop-up overlay example" /></div>
+            </div>
           </div>
         </div>
 
-        <!-- Approach 2 -->
-        <div class="cs-approach-card">
+        <!-- Panel 2: Temporary setup page -->
+        <div class="cs-tab-panel" data-panel="1">
           <div>
-            <p class="cs-problem-num">Approach 02</p>
             <h3 class="cs-approach-title">Temporary setup page</h3>
             <p class="cs-approach-desc">A dedicated setup page surfaces in the nav and guides users through key actions. Once setup is complete, the page disappears.</p>
             <div class="cs-approach-pros-cons">
@@ -154,21 +136,20 @@
           </div>
           <div class="cs-approach-imgs">
             <div>
-              <p class="cs-approach-ref-label">Zoho</p>
-              <div class="cs-approach-ref-img"><img src="/images/NullState/ref-zoho-setup.png" alt="Zoho setup page" /></div>
+              <p class="cs-approach-ref-label">Mailchimp</p>
+              <div class="cs-approach-ref-img"><img src="/images/NullState/CompetitiveAudit/SeparatePage1.png" alt="Mailchimp temporary setup page example" /></div>
             </div>
             <div>
-              <p class="cs-approach-ref-label">Mailchimp</p>
-              <div class="cs-approach-ref-img"><img src="/images/NullState/ref-mailchimp-automations.png" alt="Mailchimp empty state" /></div>
+              <p class="cs-approach-ref-label">Zoho</p>
+              <div class="cs-approach-ref-img"><img src="/images/NullState/CompetitiveAudit/SeparatePage2.png" alt="Zoho temporary setup page example" /></div>
             </div>
           </div>
         </div>
 
-        <!-- Approach 3: chosen -->
-        <div class="cs-approach-card is-chosen">
+        <!-- Panel 3: Dynamic null state (chosen) -->
+        <div class="cs-tab-panel" data-panel="2">
           <div>
             <span class="cs-chosen-badge">&#10003; Chosen direction</span>
-            <p class="cs-problem-num">Approach 03</p>
             <h3 class="cs-approach-title">Dynamic null state</h3>
             <p class="cs-approach-desc">The product page itself adapts, surfacing CTAs, educational content, and feature context that evolves as the user engages. Once used, the page shifts toward the standard product view.</p>
             <div class="cs-approach-pros-cons">
@@ -190,60 +171,46 @@
           </div>
           <div class="cs-approach-imgs">
             <div>
-              <p class="cs-approach-ref-label">Mailchimp: null state</p>
-              <div class="cs-approach-ref-img"><img src="/images/NullState/ref-mailchimp-null.png" alt="Mailchimp null state" /></div>
+              <p class="cs-approach-ref-label">Mailchimp</p>
+              <div class="cs-approach-ref-img cs-approach-ref-img--crop-bottom"><img src="/images/NullState/CompetitiveAudit/EvolvingPage1.png" alt="Mailchimp dynamic null state example" /></div>
             </div>
             <div>
-              <p class="cs-approach-ref-label">Mailchimp: after first use</p>
-              <div class="cs-approach-ref-img"><img src="/images/NullState/ref-mailchimp-active.png" alt="Mailchimp active state" /></div>
+              <p class="cs-approach-ref-label">Mailchimp</p>
+              <div class="cs-approach-ref-img cs-approach-ref-img--crop-bottom"><img src="/images/NullState/CompetitiveAudit/EvolvingPage2.png" alt="Mailchimp dynamic null state example" /></div>
             </div>
           </div>
         </div>
+        </div><!-- end cs-tabs-card -->
 
-      </div>
-    </section>
+        <p class="cs-body" style="margin-top: 32px;">Ultimately, we felt that despite its higher design overhead, the dynamic null state would let us create a more broadly relevant page, one that could adapt based on what we know about sellers and the actions they take in the product.</p>
 
-    <!-- CROSS-FUNCTIONAL BRAINSTORM SECTION -->
-    <section class="cs-section">
-      <div class="cs-section-inner">
-        <p class="cs-section-label">Process</p>
-        <h2 class="cs-section-title">Cross-functional brainstorm.</h2>
-        <p class="cs-body">With the evolving page direction decided, we ran a cross-functional session with engineering, product, marketing, and design to align on content strategy. Three questions framed the conversation:</p>
-        <div class="cs-recs">
-          <div class="cs-rec">
-            <span class="cs-rec-num">01</span>
-            <h3>How do we get sellers started?</h3>
-            <p>What first step (or sequence of steps) should we encourage Invoice-ready sellers to take?</p>
-          </div>
-          <div class="cs-rec">
-            <span class="cs-rec-num">02</span>
-            <h3>What should sellers know?</h3>
-            <p>Which product features are most worth calling out to sellers who are just exploring Invoices?</p>
-          </div>
-          <div class="cs-rec">
-            <span class="cs-rec-num">03</span>
-            <h3>Why should they use it?</h3>
-            <p>What business benefits would resonate most with sellers who haven't yet committed to using Invoices?</p>
-          </div>
-        </div>
-        <div class="cs-two-col" style="margin-top: 32px;">
-          <div class="cs-img-placeholder" style="margin: 0; min-height: 220px;">Export: <code>brainstorm-1.png</code><br>Screenshot 2026-03-12 at 1.21.21 PM</div>
-          <div class="cs-img-placeholder" style="margin: 0; min-height: 220px;">Export: <code>brainstorm-2.png</code><br>Screenshot 2026-03-12 at 1.21.34 PM</div>
-        </div>
-        <div class="cs-img-placeholder" style="min-height: 220px;">Export: <code>brainstorm-3.png</code><br>Screenshot 2026-03-12 at 1.21.53 PM</div>
+        <h3 class="cs-subsection-title">Content section mapping</h3>
+        <p class="cs-body">Before jumping into design, we mapped how Zoho, Mailchimp, and Square Marketing each structured their content sections. This helped us identify which modules (primary CTAs, product features, educational content) were common across implementations and gave us a shared vocabulary heading into the brainstorm.</p>
+        <button class="cs-journey-img-btn" onclick="openLightbox('/images/NullState/Sections.jpg', 'Content section mapping across Zoho, Mailchimp, and Square Marketing')" aria-label="View content section mapping">
+          <img src="/images/NullState/Sections.jpg" alt="Content section mapping across Zoho, Mailchimp, and Square Marketing" />
+          <span class="cs-journey-img-hint">Click to expand</span>
+        </button>
+
+        <h3 class="cs-subsection-title">Cross-functional brainstorm</h3>
+        <p class="cs-body">With the evolving page direction decided, we ran a cross-functional session with engineering, product, marketing, and design to align on content strategy. Three questions framed the conversation: how do we help get sellers started, what key information should sellers know about the product in their first few days, and what benefits does the product offer?</p>
+        <button class="cs-journey-img-btn" onclick="openLightbox('/images/NullState/Brainstorm.jpg', 'Cross-functional brainstorm session notes')" aria-label="View brainstorm notes">
+          <img src="/images/NullState/Brainstorm.jpg" alt="Cross-functional brainstorm session notes" />
+          <span class="cs-journey-img-hint">Click to expand</span>
+        </button>
       </div>
     </section>
 
     <!-- A/B TESTING SECTION -->
-    <section class="cs-section cs-section--gray">
+    <section class="cs-section">
       <div class="cs-section-inner">
         <p class="cs-section-label">A/B Testing</p>
-        <h2 class="cs-section-title">Two bets, one experiment.</h2>
-        <p class="cs-body">Given how different our two target audiences were, we decided to A/B test two distinct approaches rather than try to serve both with a single page. One marketing-led page emphasizing high-level product benefits, and one set-up-led page focused on guiding sellers through their first steps.</p>
-        <div class="cs-hypothesis">
-          <p class="cs-hypothesis-label">Hypothesis</p>
-          <p class="cs-hypothesis-text">Sellers shown a more contextual, action-oriented null state will be more likely to send their first invoice than sellers shown the current empty dashboard.</p>
-        </div>
+        <h2 class="cs-section-title">Two bets, one experiment</h2>
+        <p class="cs-body">Coming out of the brainstorm, we aligned on two potential paths forward: one focused on "selling" the benefits to new users, and the other focused on helping high-intent sellers get started quickly. Each implied different content priorities. The marketing-led approach would lead with product value and social proof, while the set-up-led approach would prioritize first actions and quick wins.</p>
+        <p class="cs-body">Both variants used a simple, modular design system built from interchangeable content blocks. This meant future testing, audience-specific customization, and optimization could happen through content swaps rather than structural redesigns, giving us a scalable foundation without additional engineering investment.</p>
+        <button class="cs-journey-img-btn" style="margin-top: 32px;" onclick="openLightbox('/images/NullState/ABTestDesign.jpg', 'A/B test design showing marketing-led vs set-up-led variants')" aria-label="View A/B test design">
+          <img src="/images/NullState/ABTestDesign.jpg" alt="A/B test design showing marketing-led vs set-up-led variants" />
+          <span class="cs-journey-img-hint">Click to expand</span>
+        </button>
       </div>
     </section>
 
@@ -251,8 +218,8 @@
     <section class="cs-section cs-section--gray">
       <div class="cs-section-inner">
         <p class="cs-section-label">Final Design</p>
-        <h2 class="cs-section-title">How the page evolves.</h2>
-        <p class="cs-body">The dynamic null state adapts as sellers engage. The page opens with a marketing-forward layout built for new users, shifts to an action-oriented view after the first send, then settles into the standard product experience once the seller is active.</p>
+        <h2 class="cs-section-title">How the page evolves</h2>
+        <p class="cs-body">The dynamic null state adapts as sellers engage. Each variant opens with a different content strategy, but both follow the same progression, shifting from an introductory layout to an action-oriented view after the first send, then settling into the standard product experience.</p>
         <div class="cs-screen-loop-wrap">
           <div class="cs-screen-loop-pair">
             <div>
@@ -280,6 +247,19 @@
             <span class="cs-screen-loop-label">Active</span>
           </div>
         </div>
+
+        <h3 class="cs-subsection-title">Impact</h3>
+        <div class="cs-outcome-stats">
+          <div class="cs-outcome-stat">
+            <span class="cs-outcome-number">~20%</span>
+            <span class="cs-outcome-label">CTR lift (marketing-led variant)</span>
+          </div>
+          <div class="cs-outcome-stat">
+            <span class="cs-outcome-number">11%</span>
+            <span class="cs-outcome-label">CTR lift (set-up-led variant)</span>
+          </div>
+        </div>
+        <p class="cs-body">Both variants exceeded our 5% target, with the marketing-led page delivering roughly 4x the expected lift. The results validated that pairing strong product instincts with competitive research and cross-functional alignment can produce high-confidence hypotheses. The A/B testing then became a tool for measuring magnitude rather than guessing direction.</p>
       </div>
     </section>
 
@@ -309,6 +289,15 @@
         document.body.style.overflow = '';
       }
       document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+      // Approach tabs
+      document.querySelectorAll('.cs-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          const idx = tab.dataset.tab;
+          document.querySelectorAll('.cs-tab').forEach(t => t.classList.toggle('is-active', t.dataset.tab === idx));
+          document.querySelectorAll('.cs-tab-panel').forEach(p => p.classList.toggle('is-active', p.dataset.panel === idx));
+        });
+      });
     </script>
     <script>
       // Screen loop: fade all loops in sync every 4 seconds

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Layout Options — Approaches</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+  <link rel="stylesheet" href="/src/type.css" />
+  <link rel="stylesheet" href="/src/case-study-v1.css" />
+  <style>
+    /* ── Page chrome ── */
+    .options-page { max-width: 900px; margin: 0 auto; padding: 64px 40px 120px; }
+    .options-intro { margin-bottom: 80px; }
+    .options-intro h1 { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #999; margin-bottom: 12px; }
+    .options-intro p  { font-size: 15px; color: #666; line-height: 1.6; }
+
+    .option-block { margin-bottom: 100px; }
+    .option-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: #006aff; background: #eef4ff; padding: 5px 12px; border-radius: 100px;
+      margin-bottom: 12px;
+    }
+    .option-title { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 6px; }
+    .option-note  { font-size: 14px; color: #888; margin-bottom: 32px; line-height: 1.5; }
+    .option-divider { border: none; border-top: 1px solid #f0f0f0; margin: 100px 0; }
+
+    /* Shared approach data */
+    .approach-num  { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #999; margin-bottom: 8px; }
+    .approach-title { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 10px; }
+    .approach-desc  { font-size: 14px; color: #555; line-height: 1.65; margin-bottom: 16px; }
+    .pros-cons { display: flex; gap: 24px; font-size: 13px; line-height: 1.6; }
+    .pros-cons-col { flex: 1; }
+    .pros-cons-col strong { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+    .pros-cons-col.pros strong { color: #1a7a4a; }
+    .pros-cons-col.cons strong { color: #c0392b; }
+    .pros-cons-col ul { margin: 0; padding-left: 16px; color: #555; }
+    .pros-cons-col li { margin-bottom: 4px; }
+    .chosen-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      color: #1a7a4a; background: #edfaf3; padding: 4px 10px; border-radius: 100px;
+      margin-bottom: 12px;
+    }
+
+    /* ─────────────────────────────────────────────
+       OPTION A: Stacked horizontal cards
+    ───────────────────────────────────────────── */
+    .stacked-card {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 40px;
+      align-items: start;
+      padding: 32px;
+      border: 1px solid #eee;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      background: #fff;
+      transition: box-shadow 0.2s;
+    }
+    .stacked-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
+    .stacked-card.is-chosen {
+      border-color: #006aff;
+      border-width: 2px;
+      background: #fafcff;
+    }
+    .stacked-card-imgs { display: flex; flex-direction: column; gap: 12px; }
+    .ref-img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: #f5f5f5;
+      overflow: hidden;
+    }
+    .ref-img img { width: 100%; display: block; }
+    .ref-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #bbb; margin-bottom: 6px; }
+
+    /* ─────────────────────────────────────────────
+       OPTION B: Tabs
+    ───────────────────────────────────────────── */
+    .tabs-wrap { border: 1px solid #eee; border-radius: 16px; overflow: hidden; }
+    .tab-bar {
+      display: flex;
+      border-bottom: 1px solid #eee;
+      background: #fafafa;
+    }
+    .tab-btn {
+      flex: 1; padding: 14px 16px;
+      font-size: 13px; font-weight: 600; color: #999;
+      background: none; border: none; cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+      text-align: center;
+    }
+    .tab-btn:hover { color: #333; }
+    .tab-btn.active { color: #006aff; border-bottom-color: #006aff; background: #fff; }
+    .tab-btn .tab-chosen { font-size: 10px; font-weight: 600; color: #1a7a4a; display: block; margin-top: 2px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .tab-panel { display: none; padding: 32px; }
+    .tab-panel.active { display: grid; grid-template-columns: 1fr 300px; gap: 40px; align-items: start; }
+
+    /* ─────────────────────────────────────────────
+       OPTION C: 3-column grid
+    ───────────────────────────────────────────── */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .grid-card {
+      border: 1px solid #eee; border-radius: 16px; overflow: hidden; background: #fff;
+      display: flex; flex-direction: column;
+      transition: box-shadow 0.2s;
+    }
+    .grid-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
+    .grid-card.is-chosen { border-color: #006aff; border-width: 2px; }
+    .grid-card-img {
+      width: 100%; aspect-ratio: 4/3;
+      background: #f5f5f5;
+      border-bottom: 1px solid #eee;
+      overflow: hidden;
+    }
+    .grid-card-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+    .grid-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+    .grid-card-body .approach-desc { font-size: 13px; }
+    .grid-card-body .pros-cons { flex-direction: column; gap: 12px; }
+    .grid-card-body .pros-cons-col ul { font-size: 12px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-name" href="/">Ashley vonClausburg</a>
+  <div class="nav-links">
+    <a href="/null-state.html">← Null State Case Study</a>
+  </div>
+</nav>
+
+<div class="options-page">
+
+  <div class="options-intro">
+    <h1>Layout Options — Approaches Comparison</h1>
+    <p>Three ways to display the three design approaches in the Invoices Null State case study. Approach #3 is the chosen direction.</p>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       OPTION A: STACKED CARDS
+  ══════════════════════════════════════════════ -->
+  <div class="option-block">
+    <div class="option-label">Option A</div>
+    <h2 class="option-title">Stacked cards</h2>
+    <p class="option-note">All three approaches visible at once. Text on the left, reference screenshots on the right. Chosen approach has a blue border highlight. Easy to scan and compare without any interaction.</p>
+
+    <!-- Approach 1 -->
+    <div class="stacked-card">
+      <div>
+        <div class="approach-num">Approach 01</div>
+        <h3 class="approach-title">Pop-up overlay</h3>
+        <p class="approach-desc">An informational guide overlays the product page to walk users through key features — without changing the underlying layout.</p>
+        <div class="pros-cons">
+          <div class="pros-cons-col pros">
+            <strong>Pros</strong>
+            <ul>
+              <li>Perfectly sequences information without layout changes</li>
+              <li>Dismissible — experts can skip immediately</li>
+            </ul>
+          </div>
+          <div class="pros-cons-col cons">
+            <strong>Cons</strong>
+            <ul>
+              <li>High dismiss risk — hard to find again later</li>
+              <li>People hate pop-ups</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="stacked-card-imgs">
+        <div>
+          <div class="ref-label">Honeybook</div>
+          <div class="ref-img"><img src="https://placehold.co/340x180/e8edf5/8899bb?text=Honeybook+popup" alt="Honeybook reference" /></div>
+        </div>
+        <div>
+          <div class="ref-img"><img src="https://placehold.co/340x160/e8edf5/8899bb?text=Honeybook+example+2" alt="Honeybook reference 2" /></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Approach 2 -->
+    <div class="stacked-card">
+      <div>
+        <div class="approach-num">Approach 02</div>
+        <h3 class="approach-title">Temporary setup page</h3>
+        <p class="approach-desc">A dedicated setup page surfaces in the nav and guides users through key actions. Once setup is complete, the page disappears.</p>
+        <div class="pros-cons">
+          <div class="pros-cons-col pros">
+            <strong>Pros</strong>
+            <ul>
+              <li>Persistent during setup without disrupting the main product</li>
+              <li>Users can return to it as needed</li>
+            </ul>
+          </div>
+          <div class="pros-cons-col cons">
+            <strong>Cons</strong>
+            <ul>
+              <li>Easy to skip entirely during onboarding</li>
+              <li>Disappears before some users are ready</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="stacked-card-imgs">
+        <div>
+          <div class="ref-label">Zoho</div>
+          <div class="ref-img"><img src="https://placehold.co/340x180/edf5f0/88bbaa?text=Zoho+reference" alt="Zoho reference" /></div>
+        </div>
+        <div>
+          <div class="ref-label">Mailchimp</div>
+          <div class="ref-img"><img src="https://placehold.co/340x160/edf5f0/88bbaa?text=Mailchimp+reference" alt="Mailchimp reference" /></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Approach 3 — chosen -->
+    <div class="stacked-card is-chosen">
+      <div>
+        <div class="chosen-badge">✓ Chosen direction</div>
+        <div class="approach-num">Approach 03</div>
+        <h3 class="approach-title">Dynamic null state</h3>
+        <p class="approach-desc">The product page itself adapts — surfacing CTAs, educational content, and feature context that evolves as the user engages. Once used, the page shifts toward the standard product view.</p>
+        <div class="pros-cons">
+          <div class="pros-cons-col pros">
+            <strong>Pros</strong>
+            <ul>
+              <li>Speaks to both new and nearly-active users</li>
+              <li>Lets marketing, education, and product content coexist</li>
+            </ul>
+          </div>
+          <div class="pros-cons-col cons">
+            <strong>Cons</strong>
+            <ul>
+              <li>More complex to design and test the evolution logic</li>
+              <li>Can feel disorienting if transitions aren't handled well</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="stacked-card-imgs">
+        <div>
+          <div class="ref-label">Mailchimp — before</div>
+          <div class="ref-img"><img src="https://placehold.co/340x180/f0f4ff/8899ee?text=Mailchimp+null+state" alt="Mailchimp null state" /></div>
+        </div>
+        <div>
+          <div class="ref-label">Mailchimp — after first use</div>
+          <div class="ref-img"><img src="https://placehold.co/340x160/f0f4ff/8899ee?text=Mailchimp+evolved+state" alt="Mailchimp evolved state" /></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="option-divider" />
+
+  <!-- ══════════════════════════════════════════════
+       OPTION B: TABS
+  ══════════════════════════════════════════════ -->
+  <div class="option-block">
+    <div class="option-label">Option B</div>
+    <h2 class="option-title">Tabbed panels</h2>
+    <p class="option-note">One approach visible at a time. Tabs along the top let readers click between them. Keeps the section compact — good if the page already has a lot of content. Chosen approach tab gets a green indicator.</p>
+
+    <div class="tabs-wrap">
+      <div class="tab-bar">
+        <button class="tab-btn active" onclick="switchTab(event, 'tab1')">Approach 01<br><span style="font-size:11px; color:#aaa; font-weight:400;">Pop-up overlay</span></button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab2')">Approach 02<br><span style="font-size:11px; color:#aaa; font-weight:400;">Temporary page</span></button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab3')">Approach 03<span class="tab-chosen">✓ Chosen</span></button>
+      </div>
+
+      <div id="tab1" class="tab-panel active">
+        <div>
+          <h3 class="approach-title">Pop-up overlay</h3>
+          <p class="approach-desc">An informational guide overlays the product page to walk users through key features — without changing the underlying layout.</p>
+          <div class="pros-cons">
+            <div class="pros-cons-col pros"><strong>Pros</strong><ul><li>Perfectly sequences information without layout changes</li><li>Dismissible — experts can skip immediately</li></ul></div>
+            <div class="pros-cons-col cons"><strong>Cons</strong><ul><li>High dismiss risk — hard to find again later</li><li>People hate pop-ups</li></ul></div>
+          </div>
+        </div>
+        <div class="stacked-card-imgs">
+          <div><div class="ref-label">Honeybook</div><div class="ref-img"><img src="https://placehold.co/300x160/e8edf5/8899bb?text=Honeybook+popup" alt="Honeybook" /></div></div>
+          <div><div class="ref-img"><img src="https://placehold.co/300x140/e8edf5/8899bb?text=Honeybook+2" alt="Honeybook 2" /></div></div>
+        </div>
+      </div>
+
+      <div id="tab2" class="tab-panel">
+        <div>
+          <h3 class="approach-title">Temporary setup page</h3>
+          <p class="approach-desc">A dedicated setup page surfaces in the nav and guides users through key actions. Once setup is complete, the page disappears.</p>
+          <div class="pros-cons">
+            <div class="pros-cons-col pros"><strong>Pros</strong><ul><li>Persistent during setup without disrupting the main product</li><li>Users can return to it as needed</li></ul></div>
+            <div class="pros-cons-col cons"><strong>Cons</strong><ul><li>Easy to skip entirely during onboarding</li><li>Disappears before some users are ready</li></ul></div>
+          </div>
+        </div>
+        <div class="stacked-card-imgs">
+          <div><div class="ref-label">Zoho</div><div class="ref-img"><img src="https://placehold.co/300x160/edf5f0/88bbaa?text=Zoho+reference" alt="Zoho" /></div></div>
+          <div><div class="ref-label">Mailchimp</div><div class="ref-img"><img src="https://placehold.co/300x140/edf5f0/88bbaa?text=Mailchimp+reference" alt="Mailchimp" /></div></div>
+        </div>
+      </div>
+
+      <div id="tab3" class="tab-panel">
+        <div>
+          <div class="chosen-badge">✓ Chosen direction</div>
+          <h3 class="approach-title">Dynamic null state</h3>
+          <p class="approach-desc">The product page itself adapts — surfacing CTAs, educational content, and feature context that evolves as the user engages.</p>
+          <div class="pros-cons">
+            <div class="pros-cons-col pros"><strong>Pros</strong><ul><li>Speaks to both new and nearly-active users</li><li>Lets marketing, education, and product content coexist</li></ul></div>
+            <div class="pros-cons-col cons"><strong>Cons</strong><ul><li>More complex to design and test</li><li>Can feel disorienting if transitions aren't handled well</li></ul></div>
+          </div>
+        </div>
+        <div class="stacked-card-imgs">
+          <div><div class="ref-label">Mailchimp — null state</div><div class="ref-img"><img src="https://placehold.co/300x160/f0f4ff/8899ee?text=Mailchimp+before" alt="Mailchimp before" /></div></div>
+          <div><div class="ref-label">Mailchimp — after first use</div><div class="ref-img"><img src="https://placehold.co/300x140/f0f4ff/8899ee?text=Mailchimp+after" alt="Mailchimp after" /></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="option-divider" />
+
+  <!-- ══════════════════════════════════════════════
+       OPTION C: 3-COLUMN GRID
+  ══════════════════════════════════════════════ -->
+  <div class="option-block">
+    <div class="option-label">Option C</div>
+    <h2 class="option-title">3-column grid</h2>
+    <p class="option-note">All three approaches in equal columns — image on top, content below. Most compact. Easiest to compare at a glance, but copy will need to stay short or it'll feel dense. Works best if the screenshots do most of the talking.</p>
+
+    <div class="grid-3">
+      <!-- Card 1 -->
+      <div class="grid-card">
+        <div class="grid-card-img"><img src="https://placehold.co/300x220/e8edf5/8899bb?text=Honeybook" alt="Honeybook" /></div>
+        <div class="grid-card-body">
+          <div class="approach-num">Approach 01</div>
+          <h3 class="approach-title" style="font-size:15px;">Pop-up overlay</h3>
+          <p class="approach-desc">An overlay guides users through key features without changing the underlying page.</p>
+          <div class="pros-cons">
+            <div class="pros-cons-col pros"><strong>Pros</strong><ul><li>Sequences info perfectly</li><li>Dismissible for experts</li></ul></div>
+            <div class="pros-cons-col cons"><strong>Cons</strong><ul><li>High dismiss risk</li><li>People hate pop-ups</li></ul></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="grid-card">
+        <div class="grid-card-img"><img src="https://placehold.co/300x220/edf5f0/88bbaa?text=Zoho+%2F+Mailchimp" alt="Zoho / Mailchimp" /></div>
+        <div class="grid-card-body">
+          <div class="approach-num">Approach 02</div>
+          <h3 class="approach-title" style="font-size:15px;">Temporary setup page</h3>
+          <p class="approach-desc">A nav-level setup page walks users through key actions, then disappears after completion.</p>
+          <div class="pros-cons">
+            <div class="pros-cons-col pros"><strong>Pros</strong><ul><li>Persistent without disrupting product</li><li>Returnable during setup</li></ul></div>
+            <div class="pros-cons-col cons"><strong>Cons</strong><ul><li>Easy to skip</li><li>Disappears before users are ready</li></ul></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 — chosen -->
+      <div class="grid-card is-chosen">
+        <div class="grid-card-img"><img src="https://placehold.co/300x220/f0f4ff/8899ee?text=Mailchimp" alt="Mailchimp" /></div>
+        <div class="grid-card-body">
+          <div class="chosen-badge">✓ Chosen</div>
+          <div class="approach-num">Approach 03</div>
+          <h3 class="approach-title" style="font-size:15px;">Dynamic null state</h3>
+          <p class="approach-desc">The product page adapts — surfacing CTAs and education that evolve as the user engages.</p>
+          <div class="pros-cons">
+            <div class="pros-cons-col pros"><strong>Pros</strong><ul><li>Speaks to all user types</li><li>Feels natural, not forced</li></ul></div>
+            <div class="pros-cons-col cons"><strong>Cons</strong><ul><li>More complex to build</li><li>Disorienting if untested</li></ul></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end .options-page -->
+
+<script>
+  function switchTab(e, id) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    e.currentTarget.classList.add('active');
+    document.getElementById(id).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
