@@ -153,6 +153,7 @@ Automattic and WordPress.com thumbnails use Wixstatic URLs. Change the `al_X` pa
 - Commit regularly after meaningful changes, push after each commit: `git push`
 - Format: short description + `Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>`
 - **Always run git from:** `/Users/ashleyvonclausburg/Desktop/Portfolio`
+- **Before committing, run `git status`** to check for untracked files — especially new images in `public/images/`. If HTML references an image, that image must be committed too. Worktrees only get tracked files, so untracked images will appear broken.
 - Note: git committer name/email not configured — harmless warning, can be fixed with `git config --global user.name/email`
 
 ---
