@@ -80,6 +80,10 @@
             <span class="cs-stat-number">3.4×</span>
             <span class="cs-stat-desc">more likely to be risk-actioned if processing $10k+ in month one</span>
           </div>
+          <div class="cs-stat">
+            <span class="cs-stat-number">44%</span>
+            <span class="cs-stat-desc">lower GPV retention if a risk action occurs during a seller's first month</span>
+          </div>
         </div>
 
         <!-- QUOTES -->
@@ -98,10 +102,6 @@
           </blockquote>
         </div>
 
-        <div class="cs-callout">
-          <span class="cs-callout-stat">44% lower</span>
-          <span class="cs-callout-text">GPV retention if a risk action occurs during a seller's first month at Square</span>
-        </div>
       </div>
     </section>
 
@@ -112,23 +112,20 @@
         <h2 class="cs-section-title">Problem Definition</h2>
         <p class="cs-body">We saw this as a two-part "Goldilocks" problem:</p>
 
-        <div class="cs-two-col">
-          <div class="cs-problem-card">
+        <div class="cs-two-col cs-two-col--flat">
+          <div>
             <span class="cs-problem-num">Problem #1</span>
-            <h3>Verifying too late</h3>
-            <p>Sellers expect Square to verify their identity in a way that doesn't interfere with access to funds and in moments that make sense to them. Verifying "too late" — after a seller is already taking payments — can create frustration that leads to churn.</p>
+            <h3 class="cs-subsection-title" style="margin-top: 8px;">Verifying too late</h3>
+            <p class="cs-body">Sellers expect Square to verify their identity in a way that doesn't interfere with access to funds and in moments that make sense to them. Verifying "too late" — after a seller is already taking payments — can create frustration that leads to churn.</p>
           </div>
-          <div class="cs-problem-card">
+          <div>
             <span class="cs-problem-num">Problem #2</span>
-            <h3>Verifying too early</h3>
-            <p>The earlier we try to prevent fraud, the fewer signals we have. Verifying "too early" can create seller friction that hurts activation or payment conversion rates. An experiment that required 100% of sellers to upload identity documents before taking payments resulted in even worse damage to bottom-of-funnel metrics.</p>
+            <h3 class="cs-subsection-title" style="margin-top: 8px;">Verifying too early</h3>
+            <p class="cs-body">The earlier we try to prevent fraud, the fewer signals we have. Verifying "too early" can create seller friction that hurts activation or payment conversion rates. An experiment that required 100% of sellers to upload identity documents before taking payments resulted in even worse damage to bottom-of-funnel metrics.</p>
           </div>
         </div>
 
-        <div class="cs-hypothesis">
-          <p class="cs-hypothesis-label">Hypothesis</p>
-          <p class="cs-hypothesis-text">We can reduce risk-based churn by optimizing the placement of document requests so it better matches seller expectations and doesn't require their accounts to be frozen.</p>
-        </div>
+        <p class="cs-body"><strong>Our hypothesis:</strong> We can reduce risk-based churn by optimizing the placement of document requests so it better matches seller expectations and doesn't require their accounts to be frozen.</p>
 
         <h3 class="cs-subsection-title">Proposed experience: Gate our riskiest payments</h3>
         <p class="cs-body">During discovery, we uncovered that <strong>card-not-present (CNP) payments accounted for &gt;75% of transactions that triggered risk actions.</strong> So we knew that focusing on these types of payments could potentially deliver the most proverbial bang for the buck.</p>
@@ -180,10 +177,8 @@
           <source src="/public/images/ProactiveDocIDV/UsabilityPrototype.mov" type="video/quicktime" />
         </video>
 
-        <div class="cs-finding">
-          <p class="cs-finding-label">Key Finding</p>
-          <p class="cs-finding-text">All sellers understood the security rationale for blocking certain kinds of payments, but they wanted more explicit information around what payment types were available pre and post verification.</p>
-        </div>
+        <p class="cs-section-label" style="margin-top: 40px;">Key Finding</p>
+        <p class="cs-body" style="font-size: 20px; font-weight: 500; color: #111; line-height: 1.6;">All sellers understood the security rationale for blocking certain kinds of payments, but they wanted more explicit information around what payment types were available pre and post verification.</p>
 
         <div class="cs-recs">
           <div class="cs-rec cs-rec--has-image">
@@ -191,11 +186,7 @@
               <span class="cs-rec-num">Rec 01</span>
               <h3>List payment options</h3>
               <p>Sellers wanted explicit information around which payment types were available before and after verification. The modal needed to clearly list what was blocked and what would be unlocked.</p>
-              <div class="cs-rec-quotes">
-                <p>"The screen doesn't specify I'm going to have other options"</p>
-                <p>"You told me I'm not allowed more, but I have these other options. I should have been told that on the previous screen."</p>
-                <p>"I don't know what the other payment methods are"</p>
-              </div>
+              <p class="cs-rec-quote-inline"><em>"The screen doesn't specify I'm going to have other options"</em> · <em>"You told me I'm not allowed more, but I have these other options. I should have been told that on the previous screen."</em> · <em>"I don't know what the other payment methods are"</em></p>
             </div>
             <div class="cs-rec-img">
               <img src="/images/ProactiveDocIDV/ResearchRecommendation1.png" alt="List payment options recommendation" />
@@ -205,10 +196,7 @@
             <span class="cs-rec-num">Rec 02</span>
             <h3>Provide context early</h3>
             <p>Giving sellers an opportunity to complete identity verification prior to the payment moment — during onboarding — is a key reason for seller compassion around the request.</p>
-            <div class="cs-rec-quotes">
-              <p>"I should have done [verified my identity] when you originally asked me to."</p>
-              <p>"Obviously [not being able to take payments] would be frustrating, but I'm the one that chose to skip that step."</p>
-            </div>
+            <p class="cs-rec-quote-inline"><em>"I should have done [verified my identity] when you originally asked me to."</em> · <em>"Obviously [not being able to take payments] would be frustrating, but I'm the one that chose to skip that step."</em></p>
           </div>
         </div>
       </div>

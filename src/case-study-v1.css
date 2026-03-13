@@ -168,22 +168,22 @@
 }
 
 .cs-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
+  display: flex;
+  gap: 0;
   margin: 48px 0;
-  background: #f0f0f0;
-  border-radius: 16px;
-  overflow: hidden;
 }
 
 .cs-stat {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 32px;
-  background: #fff;
+  flex: 1;
+  padding: 0 32px;
+  border-right: 1px solid #e0e0e0;
 }
+
+.cs-stat:first-child { padding-left: 0; }
+.cs-stat:last-child { border-right: none; }
 
 .cs-stat-number {
   font-size: 48px;
@@ -431,6 +431,22 @@
   background: #fafafa;
   border-radius: 8px;
   padding: 10px 14px;
+}
+
+/* Inline rec quotes (simplified from pill cards) */
+.cs-rec-quote-inline {
+  font-size: 13px;
+  font-style: italic;
+  color: #777;
+  line-height: 1.65;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 4px;
+}
+
+/* Flat two-col (no card borders) */
+.cs-two-col--flat > div {
+  padding: 0;
 }
 
 /* Rec with image: full-width card, stacked layout */
@@ -964,7 +980,9 @@
   .cs-hero-image { flex: 0 0 auto; }
   .cs-title { font-size: clamp(40px, 12vw, 60px); }
   .cs-meta-row { gap: 24px; }
-  .cs-stats { grid-template-columns: 1fr; }
+  .cs-stats { flex-direction: column; gap: 24px; }
+  .cs-stat { padding: 0; border-right: none; border-bottom: 1px solid #e0e0e0; padding-bottom: 24px; }
+  .cs-stat:last-child { border-bottom: none; padding-bottom: 0; }
   .cs-quotes { grid-template-columns: 1fr; }
   .cs-quote--full { grid-column: 1; }
   .cs-two-col { grid-template-columns: 1fr; }
