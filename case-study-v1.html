@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reducing Risk Freeze Rates — Ashley vonClausburg (v1)</title>
+    <title>Reducing Risk Freeze Rates - Ashley vonClausburg (v1)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
@@ -19,7 +19,7 @@
       <div class="nav-links">
         <a href="/#work">Work</a>
         <a href="/#about">About</a>
-        <a href="mailto:sarah@example.com">Contact</a>
+        <a href="mailto:vonclausburg@gmail.com">Contact</a>
       </div>
     </nav>
 
@@ -29,7 +29,7 @@
         <div class="cs-hero-text">
           <p class="cs-label">Case Study · UX / Usability</p>
           <h1 class="cs-title">Reducing Risk<br>Freeze Rates</h1>
-          <p class="cs-subtitle">Using empathy to reduce new seller churn by 4%<br>(and pulling it off with limited eng scope)</p>
+          <p class="cs-subtitle">Using empathy to reduce new seller churn by 4% and risk freeze rates by 16%</p>
           <div class="cs-meta-row">
             <div class="cs-meta-item">
               <span class="cs-meta-label">Company</span>
@@ -57,50 +57,34 @@
         <p class="cs-section-label">Background</p>
         <h2 class="cs-section-title">Risky Business for Services Sellers</h2>
         <p class="cs-body">
-          Square's Risk team was seeing a growing problem: good sellers were having funds frozen or restricted by automated risk systems and leaving because of it. Complaints were rising, and churn was climbing.
+          Square's Risk team relied on a combination of automated and human systems to protect the platform and its users from fraud. But by 2024, those same systems were increasingly catching good sellers in the crossfire, driving up seller complaints, lengthening risk resolution times, and ultimately accelerating GPV churn.
         </p>
         <p class="cs-body">
-          The audience that my team supported, service sellers, happened to be a particularly affected group. These businesses — like landscapers, contractors, and photographers — sell their time and expertise. The nature of their workflows means they often take infrequent, high-value, card-not-present payments. Which happens to be exactly what fraudulent payments look like. As a result, services sellers were being risk-actioned at more than twice the rate of any other seller group on Square.
+          My team focused on services sellers: landscapers, contractors, photographers, and other businesses that sell their time and expertise. The nature of their work means they often process infrequent, high-value, card-not-present transactions, which is also exactly what fraud looks like. As a result, services sellers were being risk-actioned at more than twice the rate of any other seller group on Square, and we believed that experience was a leading driver of churn among new sellers.
         </p>
-        <p class="cs-body">
-          My team was brought in on a special project to help the Risk team understand these sellers better and find ways to reduce the negative impact of risk actions without exposing Square to more fraudulent payment losses.
-        </p>
-
         <!-- STATS -->
         <div class="cs-stats">
           <div class="cs-stat">
             <span class="cs-stat-number">20%</span>
-            <span class="cs-stat-desc">of services sellers experience a risk action in their first month</span>
+            <span class="cs-stat-desc">of services sellers are risk-actioned in month one</span>
           </div>
           <div class="cs-stat">
             <span class="cs-stat-number">40%</span>
-            <span class="cs-stat-desc">of first-month GPV comes from risk-actioned seller accounts</span>
+            <span class="cs-stat-desc">of first-month GPV from risk-actioned accounts</span>
           </div>
           <div class="cs-stat">
             <span class="cs-stat-number">3.4×</span>
-            <span class="cs-stat-desc">more likely to be risk-actioned if processing $10k+ in month one</span>
+            <span class="cs-stat-desc">more likely to be risk-actioned processing $10k+ in month one</span>
           </div>
           <div class="cs-stat">
             <span class="cs-stat-number">44%</span>
-            <span class="cs-stat-desc">lower GPV retention if a risk action occurs during a seller's first month</span>
+            <span class="cs-stat-desc">lower GPV retention when risk-actioned in first month</span>
           </div>
         </div>
 
-        <!-- QUOTES -->
-        <div class="cs-quotes">
-          <blockquote class="cs-quote">
-            <p>"Pretty upset that my account has been in review for over a week with almost $3,000 completely untouchable... I've had my account for only a month."</p>
-            <cite>SMB Seller, Photography</cite>
-          </blockquote>
-          <blockquote class="cs-quote">
-            <p>"These reviews have caused severe financial strain for my business at times, to the point that I have strongly considered discontinuing the use of Square."</p>
-            <cite>Micro+ Seller, HVAC Repair</cite>
-          </blockquote>
-          <blockquote class="cs-quote cs-quote--full">
-            <p>"Secondly you're holding my funds for over a month to verify me. That is unacceptable considering when you set up your app and give your information you should have asked for it up front."</p>
-            <cite>SMB Seller, Landscaper</cite>
-          </blockquote>
-        </div>
+        <p class="cs-body">
+          My team was brought in on a special engagement to collaborate with the Risk team to find ways to reduce the negative impact of risk actions on sellers without exposing Square to more risk losses.
+        </p>
 
       </div>
     </section>
@@ -109,40 +93,55 @@
     <section class="cs-section cs-section--gray">
       <div class="cs-section-inner">
         <p class="cs-section-label">Process</p>
-        <h2 class="cs-section-title">Problem Definition</h2>
-        <p class="cs-body">We saw this as a two-part "Goldilocks" problem:</p>
+        <h2 class="cs-section-title">Defining our approach</h2>
+        <p class="cs-body">While other teams focused on improving risk model accuracy and refining how risk actions were communicated, my team was tasked with tackling a specifically fake account risk actions. These occur when Square suspects a seller may not be who they claim to be, resulting in frozen funds until the seller provides identifying documentation. These freezes were responsible for 93% of GPV churn. As we explored how to reduce this impact, we identified that the timing of when we request these documents presented the biggest challenge, and framed it as a two-part "Goldilocks" problem.</p>
 
         <div class="cs-two-col cs-two-col--flat">
           <div>
             <span class="cs-problem-num">Problem #1</span>
-            <h3 class="cs-subsection-title" style="margin-top: 8px;">Verifying too late</h3>
-            <p class="cs-body">Sellers expect Square to verify their identity in a way that doesn't interfere with access to funds and in moments that make sense to them. Verifying "too late" — after a seller is already taking payments — can create frustration that leads to churn.</p>
+            <h3 class="cs-subsection-title" style="margin-top: 8px;">Requesting ID verification too late causes business harm and clashes with seller expectations</h3>
+            <p class="cs-body">Good sellers expect Square to verify their identity in a way that won't interfere with access to their funds, and at moments that feel natural. Verifying too late, after a seller has already completed onboarding and begun processing payments, creates frustration, confusion, and ultimately churn.</p>
           </div>
           <div>
             <span class="cs-problem-num">Problem #2</span>
-            <h3 class="cs-subsection-title" style="margin-top: 8px;">Verifying too early</h3>
-            <p class="cs-body">The earlier we try to prevent fraud, the fewer signals we have. Verifying "too early" can create seller friction that hurts activation or payment conversion rates. An experiment that required 100% of sellers to upload identity documents before taking payments resulted in even worse damage to bottom-of-funnel metrics.</p>
+            <h3 class="cs-subsection-title" style="margin-top: 8px;">Requesting ID verification too early means fewer signals and more sellers impacted</h3>
+            <p class="cs-body">The earlier we try to prevent fraud, the fewer signals we have to distinguish good actors from bad. Verifying too early risks creating friction that hurts activation or payment conversion rates. An experiment requiring 100% of sellers to upload identity documents before taking payments resulted in even worse damage to bottom-of-funnel metrics.</p>
           </div>
         </div>
 
-        <p class="cs-body"><strong>Our hypothesis:</strong> We can reduce risk-based churn by optimizing the placement of document requests so it better matches seller expectations and doesn't require their accounts to be frozen.</p>
+        <!-- QUOTES -->
+        <p class="cs-section-label" style="margin-top: 40px; margin-bottom: 8px;">Seller Feedback</p>
+        <div class="cs-quotes cs-quotes--three" style="margin-top: 0;">
+          <blockquote class="cs-quote">
+            <p>"Pretty upset that my account has been in review for over a week with almost $3,000 completely untouchable... I've had my account for only a month."</p>
+            <cite>SMB Seller, Photography</cite>
+          </blockquote>
+          <blockquote class="cs-quote">
+            <p>"These reviews have caused severe financial strain for my business at times, to the point that I have strongly considered discontinuing the use of Square."</p>
+            <cite>Micro+ Seller, HVAC Repair</cite>
+          </blockquote>
+          <blockquote class="cs-quote">
+            <p>"Secondly you're holding my funds for over a month to verify me. That is unacceptable considering when you set up your app and give your information you should have asked for it up front."</p>
+            <cite>SMB Seller, Landscaper</cite>
+          </blockquote>
+        </div>
+
+        <p class="cs-body"><strong>Our hypothesis:</strong> We can reduce risk-based churn by optimizing when we request identity documents, placing them where they better match seller expectations and reducing the likelihood that accounts need to be frozen.</p>
 
         <h3 class="cs-subsection-title">Proposed experience: Gate our riskiest payments</h3>
-        <p class="cs-body">During discovery, we uncovered that <strong>card-not-present (CNP) payments accounted for &gt;75% of transactions that triggered risk actions.</strong> So we knew that focusing on these types of payments could potentially deliver the most proverbial bang for the buck.</p>
-        <p class="cs-body">Additionally, <strong>80% of fake account freezes happen after a sellers' first or second payment through Square.</strong> Meaning that if we wanted to prevent freezes, we needed to do it as early in the sellers' journey as possible.</p>
+        <p class="cs-body">During discovery, we found that the transactions most likely to trigger fake account risk actions were card-not-present (CNP) payments, where the seller manually enters a credit card number or the buyer pays remotely via something like an invoice. These accounted for over 75% of transactions that triggered risk actions, so by focusing on CNP payments specifically, we could target the transactions most likely to result in account freezes.</p>
+        <p class="cs-body">We also knew that 80% of fake account freezes occur after a seller's first or second payment, meaning any effective intervention needed to happen as early in the seller journey as possible.</p>
 
-        <button class="cs-journey-img-btn" onclick="openLightbox('/public/images/ProactiveDocIDV/journey2.jpg', 'Journey map')" aria-label="View full journey map">
-          <img src="/public/images/ProactiveDocIDV/journey2.jpg" alt="Journey map comparing current risk experience vs. gated CNP payments" />
+        <button class="cs-journey-img-btn" onclick="openLightbox('/images/ProactiveDocIDV/journey2.jpg', 'Journey map')" aria-label="View full journey map">
+          <img src="/images/ProactiveDocIDV/journey2.jpg" alt="Journey map comparing current risk experience vs. gated CNP payments" />
           <span class="cs-journey-img-hint">Click to expand</span>
         </button>
-      </div>
-    </section>
+        <h3 class="cs-subsection-title">Proof of concept: Optional DocIDV + Gating CNP Payments on VT</h3>
+        <p class="cs-body">We audited CNP payments across all payment platforms including Invoices, Virtual Terminal, and the Square POS. Ultimately, due to internal constraints around testing timelines and mobile eng resources, we aligned on a proof of concept that focused on the web-based payment platform Virtual Terminal only. If we saw a positive impact from this small, segmented test, then we could justify further investment to scale it across other platforms.</p>
 
-    <!-- PROOF OF CONCEPT -->
-    <section class="cs-section">
-      <div class="cs-section-inner">
-        <h3 class="cs-subsection-title" style="margin-top: 0;">Proof of concept: Warn + Lock</h3>
-        <p class="cs-body">Due to internal constraints around testing timelines, mobile eng resources, and a lack of data on the likelihood of certain risk actions across various payment scenarios, we aligned on a proof of concept that focused on the web-based payment platform Virtual Terminal.</p>
+        <!-- TODO: Add Gating VT proof of concept image -->
+
+        <p class="cs-body">A key moment came while mapping out the seller experience with gating. I advocated that, for an optimal user experience, we needed to give sellers the option to do DocIDV prior to encountering blocked payment methods. We knew there was a high likelihood for confusion or frustration during the initial payment flow when sellers realized not all payment methods were accessible. I felt that sellers would be more understanding if they had already been given the choice and declined — and that we could get more sellers to complete verification proactively, avoiding the gate entirely.</p>
 
         <button class="cs-journey-img-btn" onclick="openLightbox('/images/ProactiveDocIDV/Warn_Lock.png', 'Warn + Lock proof of concept screens')" aria-label="View Warn + Lock screens" style="margin-top: 24px;">
           <img class="cs-solution-img" src="/images/ProactiveDocIDV/Warn_Lock.png" alt="Warn + Lock proof of concept screens" style="margin-top: 0;" />
@@ -154,18 +153,16 @@
     <!-- LIGHTBOX -->
     <div id="cs-lightbox" class="cs-lightbox" onclick="closeLightbox()">
       <button class="cs-lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
-      <img src="/public/images/ProactiveDocIDV/journey2.jpg" alt="Journey map" onclick="event.stopPropagation()" />
+      <img src="/images/ProactiveDocIDV/journey2.jpg" alt="Journey map" onclick="event.stopPropagation()" />
     </div>
 
     <!-- USABILITY TESTING -->
     <section class="cs-section cs-section--gray">
       <div class="cs-section-inner">
         <p class="cs-section-label">Research</p>
-        <h2 class="cs-section-title">Usability testing:</h2>
-        <p class="cs-body">We wanted to feedback on the new VT CNP gated flow content that included a modal explaining their options if they do or do not verify as well as the actual VT experience with certain payment methods gated.</p>
-        <p class="cs-body">Using the scenario that the seller had just signed up for Square and skipped an optional ID verification step, we tested a single prototype. The prototype took the <strong>8 sellers (4 Square sellers, and 4 non-Square sellers)</strong> from the VT dashboard through an ID verification modal and finally to a gated version of VT.</p>
-
-        <h3 class="cs-subsection-title">Prototype</h3>
+        <h2 class="cs-section-title">Usability testing</h2>
+        <p class="cs-body">Once we had aligned on the approach, we wanted to get feedback from sellers on the proposed gating experience. As CNP vs CP payment methods are not intuitive distinctions for sellers, we knew it would be a challenge to clearly explain which payment methods were and weren't available to them. We also wanted to stress test how sellers would react to having an initial payment experience disrupted in this way.</p>
+        <p class="cs-body">Using the scenario that the seller had just signed up for Square and skipped an optional ID verification step, we tested a simple, single prototype. The prototype took the <strong>8 sellers (4 Square sellers, and 4 non-Square sellers)</strong> from the VT dashboard through an ID verification modal and finally to a gated version of VT.</p>
         <video
           class="cs-prototype-video"
           autoplay
@@ -173,30 +170,47 @@
           muted
           playsinline
         >
-          <source src="/public/images/ProactiveDocIDV/UsabilityPrototype.mp4" type="video/mp4" />
-          <source src="/public/images/ProactiveDocIDV/UsabilityPrototype.mov" type="video/quicktime" />
+          <source src="/images/ProactiveDocIDV/UsabilityPrototype.mp4" type="video/mp4" />
+          <source src="/images/ProactiveDocIDV/UsabilityPrototype.mov" type="video/quicktime" />
         </video>
 
-        <p class="cs-section-label" style="margin-top: 40px;">Key Finding</p>
-        <p class="cs-body" style="font-size: 20px; font-weight: 500; color: #111; line-height: 1.6;">All sellers understood the security rationale for blocking certain kinds of payments, but they wanted more explicit information around what payment types were available pre and post verification.</p>
+        <h3 class="cs-subsection-title" style="margin-top: 40px;">Key takeaways</h3>
+        <p class="cs-body">Overall, the prototype was a success. We found that sellers were understanding and appreciative of the security rationale for blocking certain kinds of payments. However, they did want more explicit information around what payment types were available pre and post verification to help them decide if they wanted to move forward with DocIDV in that moment.</p>
 
-        <div class="cs-recs">
-          <div class="cs-rec cs-rec--has-image">
-            <div class="cs-rec-text">
-              <span class="cs-rec-num">Rec 01</span>
-              <h3>List payment options</h3>
-              <p>Sellers wanted explicit information around which payment types were available before and after verification. The modal needed to clearly list what was blocked and what would be unlocked.</p>
-              <p class="cs-rec-quote-inline"><em>"The screen doesn't specify I'm going to have other options"</em> · <em>"You told me I'm not allowed more, but I have these other options. I should have been told that on the previous screen."</em> · <em>"I don't know what the other payment methods are"</em></p>
-            </div>
-            <div class="cs-rec-img">
-              <img src="/images/ProactiveDocIDV/ResearchRecommendation1.png" alt="List payment options recommendation" />
+        <p class="cs-section-label" style="margin-top: 40px;">Research Recommendations</p>
+        <div class="cs-tabs-card">
+          <div class="cs-tabs">
+            <button class="cs-tab is-active" data-tab="rec-0"><span class="cs-problem-num">01</span> List payment options</button>
+            <button class="cs-tab" data-tab="rec-1"><span class="cs-problem-num">02</span> Provide optional docIDV early</button>
+          </div>
+
+          <div class="cs-tab-panel cs-tab-panel--stack is-active" data-panel="rec-0">
+            <p class="cs-body">Sellers wanted explicit information around which payment types were available before and after verification. The modal needed to clearly list what was blocked and what would be unlocked to manage expectations for what they would see next.</p>
+            <img class="cs-body-img" src="/images/ProactiveDocIDV/ResearchRecommendation1.png" alt="List payment options recommendation" />
+            <div class="cs-rec-quotes-row">
+              <blockquote class="cs-rec-quote-card">
+                <p>"The screen doesn't specify I'm going to have other options"</p>
+              </blockquote>
+              <blockquote class="cs-rec-quote-card">
+                <p>"You told me I'm not allowed more, but I have these other options. I should have been told that on the previous screen."</p>
+              </blockquote>
+              <blockquote class="cs-rec-quote-card">
+                <p>"I don't know what the other payment methods are"</p>
+              </blockquote>
             </div>
           </div>
-          <div class="cs-rec">
-            <span class="cs-rec-num">Rec 02</span>
-            <h3>Provide context early</h3>
-            <p>Giving sellers an opportunity to complete identity verification prior to the payment moment — during onboarding — is a key reason for seller compassion around the request.</p>
-            <p class="cs-rec-quote-inline"><em>"I should have done [verified my identity] when you originally asked me to."</em> · <em>"Obviously [not being able to take payments] would be frustrating, but I'm the one that chose to skip that step."</em></p>
+
+          <div class="cs-tab-panel cs-tab-panel--stack" data-panel="rec-1">
+            <p class="cs-body">A key takeaway that validated earlier instincts was that giving sellers an opportunity to complete identity verification prior to the payment moment (during initial onboarding) was vital to reducing seller frustration when they encountered the gate.</p>
+            <img class="cs-body-img" src="/images/ProactiveDocIDV/ResearchRecommendation2.png" alt="Provide optional docIDV early recommendation" />
+            <div class="cs-rec-quotes-row">
+              <blockquote class="cs-rec-quote-card">
+                <p>"I should have done [verified my identity] when you originally asked me to."</p>
+              </blockquote>
+              <blockquote class="cs-rec-quote-card">
+                <p>"Obviously [not being able to take payments] would be frustrating, but I'm the one that chose to skip that step."</p>
+              </blockquote>
+            </div>
           </div>
         </div>
       </div>
@@ -206,14 +220,11 @@
     <section class="cs-section">
       <div class="cs-section-inner">
         <p class="cs-section-label">Solution</p>
-        <h2 class="cs-section-title">A Two-Part Experience</h2>
+        <h2 class="cs-section-title">Designing for the full journey</h2>
 
         <div class="cs-solution">
-          <div class="cs-solution-label">
-            <span class="cs-solution-num">Part 1</span>
-            <h3>Optional DocIDV at onboarding</h3>
-          </div>
-          <p class="cs-body">All sellers are shown a screen during payment setup where they can opt to complete document identity verification (DocIDV). Updated headline and subheading better explain the benefit of completing the step at this point in the process.</p>
+          <h3 class="cs-subsection-title">Onboarding: Optional DocIDV</h3>
+          <p class="cs-body">All sellers are shown a screen during payment setup where they can choose to complete document identity verification (DocIDV). We updated the headline and subheading to clearly explain the benefit of completing the step at this point in the process and what would happen if the seller chose to proceed without doing it.</p>
           <ul class="cs-solution-list">
             <li>If the seller <strong>skips</strong> this step, they are payment activated for all payments except CNP on Virtual Terminal</li>
             <li>If the seller <strong>completes</strong> this step, they are payment activated for all products immediately</li>
@@ -222,22 +233,12 @@
         </div>
 
         <div class="cs-solution">
-          <div class="cs-solution-label">
-            <span class="cs-solution-num">Part 2</span>
-            <h3>Gate CNP Payments on VT</h3>
-          </div>
-          <p class="cs-body">Sellers who skip verification during onboarding encounter a clear gate when they navigate to Virtual Terminal and attempt a card-not-present payment. The gate explicitly lists which payment methods are available now vs. after verification — directly addressing the usability testing insights.</p>
+          <h3 class="cs-subsection-title">Virtual Terminal: Gated CNP payments</h3>
+          <p class="cs-body">Sellers who skip verification during onboarding will not be able to take CNP payments when they navigate to Virtual Terminal. They are warned of this via a modal when they click on the take payment CTA. The modal explicitly lists which payment methods are available now vs. after verification, directly addressing the usability testing insights.</p>
           <img class="cs-solution-img" src="/images/ProactiveDocIDV/Solution_Part2.png" alt="Gate CNP Payments on VT screen" />
         </div>
-      </div>
-    </section>
 
-    <!-- OUTCOME -->
-    <section class="cs-section cs-outcome">
-      <div class="cs-section-inner">
-        <p class="cs-section-label">Outcome</p>
-        <h2 class="cs-section-title">Results</h2>
-
+        <h3 class="cs-subsection-title">Results</h3>
         <div class="cs-outcome-stats">
           <div class="cs-outcome-stat">
             <span class="cs-outcome-number">16%</span>
@@ -247,13 +248,19 @@
             <span class="cs-outcome-number">~4%</span>
             <span class="cs-outcome-label">Increase in retention</span>
           </div>
+          <div class="cs-outcome-stat">
+            <span class="cs-outcome-number">50%+</span>
+            <span class="cs-outcome-label">Sellers chose DocIDV proactively</span>
+          </div>
         </div>
 
-        <h3 class="cs-subsection-title">Design expansion</h3>
-        <ul class="cs-expansion-list">
-          <li>Launched a "second chance" DocIDV flow to allow sellers who skipped verification to go back and complete the step</li>
-          <li>Launched a mobile-native version of DocIDV that allowed scaling the proactive DocIDV experience to iOS and Android</li>
-        </ul>
+        <div class="cs-narrative-callout">
+          <p class="cs-narrative-callout-title">Success despite eng limitations</p>
+          <p class="cs-body">When the team got to eng implementation, we discovered that eng support had been reduced and that the gating mechanism would take twice as long to build as originally planned — the entire project was suddenly at risk. However, we found that we did have bandwidth to still proceed with the optional docIDV alone, without gating any payments later.</p>
+          <p class="cs-body">This empathy-driven design decision alone drove a massive decline in freeze rates and an actual reduction in new seller churn. This was one of the team's highest impact interventions to date.</p>
+          <p class="cs-narrative-callout-title">Scaling the solution</p>
+          <p class="cs-body">As a result of the success, in 2026 we scaled the intervention to include a <strong>"second chance" DocIDV flow</strong> to allow sellers who skipped verification to go back and complete the step, and a <strong>mobile-native version of DocIDV</strong> that allowed scaling the proactive DocIDV experience to iOS and Android.</p>
+        </div>
       </div>
     </section>
 
@@ -277,6 +284,15 @@
         document.body.style.overflow = '';
       }
       document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+      // Tabs
+      document.querySelectorAll('.cs-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          const idx = tab.dataset.tab;
+          document.querySelectorAll('.cs-tab').forEach(t => t.classList.toggle('is-active', t.dataset.tab === idx));
+          document.querySelectorAll('.cs-tab-panel').forEach(p => p.classList.toggle('is-active', p.dataset.panel === idx));
+        });
+      });
     </script>
   </body>
 </html>

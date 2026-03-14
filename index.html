@@ -13,28 +13,28 @@
   <body>
     <!-- NAV -->
     <nav>
-      <span class="nav-name">Ashley vonClausburg</span>
+      <a class="nav-name" href="/">AV</a>
       <div class="nav-links">
         <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="mailto:you@email.com">Contact</a>
+        <a href="/resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a href="mailto:vonclausburg@gmail.com">Contact</a>
       </div>
     </nav>
 
     <!-- HERO -->
     <section class="hero">
-      <img class="avatar" src="https://media.licdn.com/dms/image/v2/C4D03AQF6an3PCwGFUw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1569372410831?e=1775088000&v=beta&t=G967U43PdsKVzDelMDJdAxmngchD2IC22-Pfbdxer8E" alt="Ashley vonClausburg" />
-      <h1 class="headline hero-animate" style="--delay:0.05s">Ashley von<br>Clausburg</h1>
+      <!-- avatar hidden for now -->
+      <div class="hero-top hero-animate" style="--delay:0.05s">
+        <h1 class="headline">Ashley von<br>Clausburg</h1>
+      </div>
       <div class="hero-bottom hero-animate" style="--delay:0.25s">
-        <button class="hero-email" onclick="navigator.clipboard.writeText('ashley@email.com')" title="Copy email">
-          ashley@email.com
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-        </button>
-        <p class="tagline">I craft digital experiences that are clean, fast, and intentional. Based in San Francisco, open to work.</p>
+        <div class="hero-links">
+          <a class="hero-link" href="mailto:vonclausburg@gmail.com">Get in touch <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
+          <a class="hero-link" href="/resume.pdf" target="_blank" rel="noopener">Get my resume <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
+        </div>
+        <p class="hero-blurb">I'm a <span class="gradient-text">multi-disciplinary</span> product designer with 10+ years of experience. I'm quick to adopt the latest tools but always grounded in long-standing principles, because good craft is never out of style.</p>
       </div>
     </section>
-
-    <hr class="divider" />
 
     <!-- WORK -->
     <section id="work">
@@ -43,10 +43,9 @@
         <div class="work-cat">
           <div class="work-cat-header">
             <div class="work-cat-title-group">
-              <span class="work-cat-num">01</span>
               <span class="work-cat-name">Product Design</span>
+              <p class="work-cat-tagline">End-to-end UX for products that ship</p>
             </div>
-            <p class="work-cat-tagline">End-to-end UX for products that ship</p>
           </div>
           <div class="project-grid project-grid--2col">
             <a class="project-card" href="/case-study-v1.html">
@@ -77,9 +76,9 @@
                 <span class="project-desc">Increased invoices null state CTR by ~20%</span>
               </div>
             </a>
-            <a class="project-card project-card--placeholder" href="#">
-              <div class="project-thumb project-thumb--placeholder">
-                <span class="project-thumb-soon">Coming soon</span>
+            <a class="project-card" href="/contracts.html">
+              <div class="project-thumb">
+                <img src="/images/ProactiveDocIDV/Contracts/ContractThumbnail.png" alt="Contracts at the Point of Service" />
               </div>
               <div class="project-card-body">
                 <div class="project-pills">
@@ -93,7 +92,7 @@
             </a>
             <a class="project-card" href="/services-sellers.html">
               <div class="project-thumb">
-                <img src="/images/ServicesSellers/Thumbnail.jpg" alt="Understanding Services Sellers" />
+                <img src="/images/ServicesSellers/Thumbnail_v2.jpg" alt="Understanding Services Sellers" />
               </div>
               <div class="project-card-body">
                 <div class="project-pills">
@@ -111,15 +110,14 @@
         <div class="work-cat">
           <div class="work-cat-header">
             <div class="work-cat-title-group">
-              <span class="work-cat-num">02</span>
               <span class="work-cat-name">Visual &amp; Systems Design</span>
+              <p class="work-cat-tagline">Brand identity and design systems</p>
             </div>
-            <p class="work-cat-tagline">Brand identity and design systems</p>
           </div>
           <div class="project-grid">
             <a class="project-card" href="/automattic.html">
               <div class="project-thumb">
-                <img src="https://static.wixstatic.com/media/0aab06_e262bfa2496a4a63a401f59115edeb30~mv2.png/v1/fill/w_800,h_500,al_t,q_90,enc_avif,quality_auto/0aab06_e262bfa2496a4a63a401f59115edeb30~mv2.png" alt="Automattic Design System" />
+                <img src="/images/visualsection/AutomatticThumbnail.jpg" alt="Automattic Design System" />
               </div>
               <div class="project-card-body">
                 <div class="project-pills">
@@ -133,7 +131,7 @@
             </a>
             <a class="project-card" href="/wordpress.html">
               <div class="project-thumb">
-                <img src="https://static.wixstatic.com/media/0aab06_5e32bae1a73e42d3aee2e54078e4c104~mv2.jpg/v1/fill/w_800,h_500,al_l,q_85,enc_avif,quality_auto/0aab06_5e32bae1a73e42d3aee2e54078e4c104~mv2.jpg" alt="WordPress.com Digital" />
+                <img src="/images/visualsection/CreateThumbnail.jpg" alt="WordPress.com Digital" />
               </div>
               <div class="project-card-body">
                 <div class="project-pills">
@@ -164,8 +162,6 @@
 
       </div>
     </section>
-
-    <hr class="divider" />
 
     <!-- CAREER -->
     <section class="career">
@@ -206,30 +202,6 @@
       </div>
     </section>
 
-    <hr class="divider" />
-
-    <!-- ABOUT -->
-    <section class="about" id="about">
-      <p class="section-label">About</p>
-      <div class="about-content">
-        <p class="about-text">
-          I'm a designer and developer with a passion for building things that live on the internet.
-          I care deeply about craft, typography, and making complex things feel simple.
-        </p>
-        <div class="about-meta">
-          <div class="meta-group">
-            <span class="meta-label">Skills</span>
-            <span>UI Design</span>
-            <span>Frontend Dev</span>
-            <span>Branding</span>
-          </div>
-          <div class="meta-group">
-            <span class="meta-label">Currently</span>
-            <span>Available for freelance</span>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- FOOTER -->
     <footer>
