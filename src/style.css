@@ -125,6 +125,36 @@ nav {
   color: #666;
 }
 
+.hero-eyebrow {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #111;
+  margin-top: 0;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-transform: none;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: linear-gradient(90deg, #006aff, #00c6ff);
+  flex-shrink: 0;
+}
+
+.hero-eyebrow-dot {
+  background: linear-gradient(90deg, #006aff, #00c6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 10px;
+}
+
 .headline {
   font-size: clamp(64px, 11vw, 160px);
   font-weight: 700;
@@ -137,7 +167,7 @@ nav {
   font-weight: 700;
   line-height: 1.5;
   color: #222;
-  max-width: 520px;
+  max-width: 460px;
 }
 
 .hero-bottom {
@@ -270,6 +300,10 @@ nav {
   background: #f0f0f0;
   color: #555;
 }
+.pill--black {
+  background: #888;
+  color: #fff;
+}
 
 .project-title {
   font-size: 17px;
@@ -279,9 +313,20 @@ nav {
 }
 
 .project-desc {
-  font-size: 13px;
+  font-size: 15px;
   color: #999;
   line-height: 1.5;
+}
+
+/* Coming Soon card state */
+.project-card--coming-soon {
+  pointer-events: none;
+}
+.project-card--coming-soon .project-thumb {
+  position: relative;
+}
+.project-card--coming-soon .project-thumb::after {
+  display: none;
 }
 
 /* Work category sections */
@@ -326,7 +371,7 @@ nav {
 
 /* CAREER */
 .career {
-  padding: 80px 80px;
+  padding: 40px 80px 80px;
 }
 
 .career-list {
@@ -335,7 +380,7 @@ nav {
 
 .career-row {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 20px;
   padding: 20px 0;
   border-bottom: 1px solid rgba(0,0,0,0.06);
@@ -352,6 +397,26 @@ nav {
   letter-spacing: 0.05em;
   min-width: 24px;
   flex-shrink: 0;
+}
+
+.career-logo {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  fill: #ccc;
+}
+
+.career-logo-av {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1.5px solid #ccc;
+  font-size: 8px;
+  font-weight: 800;
+  color: #ccc;
+  letter-spacing: 0.02em;
+  box-sizing: border-box;
 }
 
 .career-info {
@@ -375,7 +440,7 @@ nav {
 
 .career-years {
   font-size: 13px;
-  color: #bbb;
+  color: #999;
   flex-shrink: 0;
 }
 
@@ -460,5 +525,8 @@ footer {
   .career { padding-left: 24px; padding-right: 24px; }
   .hero { min-height: 70vh; }
   .hero-bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
-  .hero-blurb { max-width: 100%; }
+  .hero-eyebrow { display: none; }
+  .headline { margin-bottom: 32px; }
+  .hero-blurb { max-width: 100%; order: -1; }
+  .hero-links { order: 1; }
 }
