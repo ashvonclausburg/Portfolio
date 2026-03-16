@@ -1101,9 +1101,14 @@
 @media (max-width: 768px) {
   .cs-grid-3col { grid-template-columns: 1fr; }
   .cs-hero, .cs-section, .cs-footer { padding-left: 24px; padding-right: 24px; }
+  .cs-hero { padding-top: 56px; padding-bottom: var(--space-12); }
+  .cs-hero-full-image { margin-left: -24px; margin-right: -24px; margin-top: var(--space-8); }
+  .desktop-only { display: none; }
   .cs-hero-inner { flex-direction: column; gap: 40px; }
   .cs-hero-image { flex: 0 0 auto; }
-  .cs-title { font-size: clamp(40px, 12vw, 60px); }
+  .cs-label { margin-bottom: var(--space-4); }
+  .cs-title { font-size: clamp(40px, 12vw, 60px); margin-bottom: var(--space-4); }
+  .cs-subtitle { margin-bottom: var(--space-8); }
   .cs-meta-row { gap: 24px; }
   .cs-stats { flex-direction: column; gap: 24px; }
   .cs-stat { padding: 0; border-right: none; border-bottom: 1px solid #e0e0e0; padding-bottom: 24px; }
