@@ -125,14 +125,6 @@ nav {
   text-transform: none;
 }
 
-.hero-eyebrow::before {
-  content: '';
-  display: block;
-  width: var(--space-8);
-  height: 2px;
-  background: linear-gradient(90deg, #006aff, #00c6ff);
-  flex-shrink: 0;
-}
 
 .hero-eyebrow-dot {
   background: linear-gradient(90deg, #006aff, #00c6ff);
