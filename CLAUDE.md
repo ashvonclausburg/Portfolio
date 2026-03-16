@@ -1,9 +1,10 @@
 # Ashley's Portfolio — Project Context
 
 ## Overview
-Personal portfolio site for a product designer. Built with vanilla HTML/CSS/JS + Vite (no React/framework). Hosted on GitHub, deploying to Netlify with custom domain.
+Personal portfolio site for a product designer. Built with vanilla HTML/CSS/JS + Vite (no React/framework). Deployed via **GitHub Pages** with custom domain `vonclausburg.com`.
 
 **GitHub:** https://github.com/ashvonclausburg/Portfolio
+**Live site:** https://vonclausburg.com
 **Local preview:** `npm run dev` → http://localhost:5173
 **Preview server name (launch.json):** `Portfolio`
 **Figma design file:** `https://www.figma.com/design/v5XWWsuTD6Yp9DjvuyVvVA/2026-Get-a-job`
@@ -14,67 +15,58 @@ Personal portfolio site for a product designer. Built with vanilla HTML/CSS/JS +
 
 ```
 /Users/ashleyvonclausburg/Desktop/Portfolio/
-├── index.html                  # Homepage: hero, work grid (3-col), career rows, about
-├── styleguide.html             # Internal design system reference (remove link before launch)
+├── index.html                      # Homepage
+├── styleguide.html                 # Internal design system reference
 │
-├── case-study-v1.html          # ✅ Square: Reducing Risk Freeze Rates (full content)
-├── null-state.html             # 🚧 Square: Invoices Null State Redesign (hero only, WIP)
-├── automattic.html             # ✅ Automattic Design System case study
-├── wordpress.html              # ✅ WordPress.com Digital case study
-├── wp-social-ads.html          # ✅ WP Social Ad Experiments case study
+├── risk-freeze-rates.html          # ✅ Square: Reducing Risk Freeze Rates
+├── invoices-null-state.html        # ✅ Square: Invoices Null State Redesign
+├── contracts.html                  # Square: Contracts case study
+├── services-sellers.html           # Square: Services Sellers case study
+├── automattic-design-system.html   # ✅ Automattic Design System
+├── wordpress-digital-identity.html # ✅ WordPress.com Digital Identity
+├── wordpress-social-ads.html       # ✅ WP Social Ad Experiments
 │
 ├── src/
 │   ├── type.css                # ⭐ Shared typography tokens (import on ALL pages)
 │   ├── style.css               # Homepage: nav, hero, cards, career rows, footer
-│   ├── case-study.css          # Unused/legacy
-│   └── case-study-v1.css       # ✅ Shared case study layout (used by ALL case study pages)
+│   ├── case-study-v1.css       # ✅ Shared case study layout (ALL case study pages)
+│   ├── automattic.css          # Automattic-specific overrides (brand banner, text-only hero)
+│   └── wordpress.css           # WordPress-specific overrides (brand banner, text-only hero)
 │
-└── public/
-    └── images/
-        ├── avatar-sketch.svg
-        ├── NullState/
-        │   └── NullState.png               # Hero + thumbnail for null-state.html
-        └── ProactiveDocIDV/
-            ├── DocIDVHero.png              # Hero + thumbnail for case-study-v1.html
-            ├── journey2.jpg               # High-res journey map (lightbox)
-            ├── UsabilityPrototype.mp4     # Compressed video ← use this
-            ├── UsabilityPrototype.mov     # Fallback only
-            ├── Warn_Lock.png
-            ├── Solution_Part1.png
-            ├── Solution_Part2.png
-            └── ResearchRecommendation1.png
+├── public/
+│   ├── password-gate.js        # Client-side password gate for case studies
+│   ├── CNAME                   # Custom domain: vonclausburg.com
+│   └── images/
+│       ├── avatar-sketch.svg
+│       ├── vonClausburgResume2026.pdf
+│       ├── Automattic/         # 22 files
+│       ├── WordPress/          # 9 files
+│       ├── WPSocialAds/        # 9 files (hero, thumbnail, pinterest, motion, videos)
+│       ├── ProactiveDocIDV/    # Hero, journey map, prototype video, solutions
+│       ├── NullState/          # Hero + thumbnail
+│       ├── ServicesSellers/
+│       └── visualsection/
+│
+└── vite.config.js              # Multi-page build config
 ```
-
----
-
-## Homepage Structure (`index.html`)
-
-1. **Nav** — sticky, blur backdrop
-2. **Hero** — big headline, avatar, email copy button, tagline
-3. `<hr class="divider" />`
-4. **Work** (`#work`) — two `.work-cat` blocks:
-   - `01 Product Design` — 2 cards: Risk Freeze Rates + Invoices Null State
-   - `02 Visual & Systems Design` — 3 cards: Automattic, WordPress.com Digital, WP Social Ads
-5. `<hr class="divider" />`
-6. **Career** (`section.career`) — 4 numbered rows: Automattic, WordPress.com, Udemy, Freelance
-7. `<hr class="divider" />`
-8. **About** (`#about`)
-9. **Footer**
-10. Temporary style guide link (remove before launch)
 
 ---
 
 ## Case Study Page Structure
 
-All case studies use `case-study-v1.css`. Structure:
+All case studies use `case-study-v1.css`. Three hero variants exist:
+- **Split** (text left, image right): `risk-freeze-rates`, `invoices-null-state`
+- **Text-only** (full-width banner below): `automattic-design-system`, `wordpress-digital-identity`
+- **Text + full image** (`cs-hero--no-image` + `cs-hero-full-image`): `wordpress-social-ads`
+
 ```
 nav
-→ cs-hero (split: text left, image right)
+→ cs-hero
   → cs-label (eyebrow)
   → cs-title
   → cs-subtitle
-  → cs-meta-row (Company / Role / Focus)
-  → cs-hero-image
+  → cs-meta-row (Company / Role)
+  → cs-hero-image | cs-hero-full-image (varies by page)
 → cs-section (+ cs-section--gray variant)
   → cs-section-inner (max-width: 850px)
     → cs-section-label, cs-section-title, cs-body
@@ -89,10 +81,6 @@ nav
 
 ## Core Design Rules
 
-### Centering / Width
-- Case study body: `max-width: 850px; margin: 0 auto` on `.cs-section-inner`
-- Homepage sections use `padding: 80px 80px` (24px on mobile)
-
 ### Typography System (`src/type.css`)
 Always import **before** page-specific CSS. Defines:
 - `--t-xs` → `--t-4xl` — font sizes
@@ -102,21 +90,14 @@ Always import **before** page-specific CSS. Defines:
 - `--color-accent: #006aff`
 - `--space-1` → `--space-20` — spacing scale (4px increments)
 
-### Eyebrow Label Class
-- **Homepage:** `.section-label` (12px, uppercase, #999, `letter-spacing: 0.12em`)
-- **Case studies:** `.cs-label` (same style, used in hero) and `.cs-section-label` (used in sections)
-- These are the same visual style — create a shared class if you need to add a new one
-
-### Fonts
-- **Inter** — all body/heading text (Google Fonts, weights 400–900)
-- **Source Code Pro** — monospace, only used in legacy case-study.css (not active)
+### Font
+- **Inter** — all text (Google Fonts, weights 400–900)
 
 ### Colors
 - Accent blue: `#006aff`
-- Quote card: `background: #f8f9fa`, `border: 1px solid rgba(0,0,0,0.08)`
-- Section divider: `border-bottom: 1px solid rgba(0,0,0,0.06)`
 - Gray section: `background: #fafafa`
 - Outcome/dark section: `background: #000`
+- Section divider: `border-bottom: 1px solid rgba(0,0,0,0.06)`
 
 ### CSS Link Order (every HTML page)
 ```html
@@ -125,77 +106,55 @@ Always import **before** page-specific CSS. Defines:
 <link rel="stylesheet" href="/src/case-study-v1.css" />  <!-- case studies only -->
 ```
 
----
-
-## Image Handling
-
-### Thumbnail Crop Helpers (homepage cards)
-Per-image CSS classes in `style.css` for images that need special cropping in the 16:10 card thumbnail:
-- `.img-crop-top` — `scale(1.35), transform-origin: top center` — hides bottom text in wide images (Automattic card)
-- `.img-crop-face` — `scale(1.1), transform-origin: 35% center` — shifts focus left (WordPress.com card)
-- Inline `style="object-position: left top;"` — anchors Square DocIDV gradient to top-left
-- Inline `style="object-position: top;"` — anchors Null State image to show gradient at top
-
-### Local Images (migrated from Wix CDN)
-All images are now served locally from `public/images/`. Organized by case study:
-- `public/images/Automattic/` — 22 files (hero, typography, layouts, photography, web, social, etc.)
-- `public/images/WordPress/` — 9 files (hero, ads, emails, banners)
-- `public/images/WPSocialAds/` — 8 files (hero, pinterest, motion, 4 videos)
-
-### Video
-- Use native HTML5 `<video autoplay loop muted playsinline>`
-- `.mp4` as primary source, `.mov` as fallback
-- Compress: `ffmpeg -i input.mov -vcodec h264 -acodec aac -crf 28 -preset fast -movflags +faststart output.mp4`
-- ffmpeg: `/opt/homebrew/bin/ffmpeg`
+### Responsive
+- Desktop: sections use `padding: 80px 80px`
+- Mobile (≤768px): `padding: 24px` sides, tighter hero spacing
+- `.desktop-only` utility class hides elements on mobile
 
 ---
 
-## Git Workflow
-- Commit regularly after meaningful changes, push after each commit: `git push`
-- Format: short description + `Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>`
+## Image & Video
+
+- All images served locally from `public/images/`, organized by case study
+- Thumbnail crop helpers in `style.css`: `.img-crop-top`, `.img-crop-face`, plus inline `object-position`
+- Video: native `<video autoplay loop muted playsinline>`, `.mp4` primary
+- ffmpeg path: `/opt/homebrew/bin/ffmpeg`
+
+---
+
+## Password Gate
+- Case study pages include `<script src="/password-gate.js" defer></script>`
+- Password: `lorem` (stored in `public/password-gate.js`)
+- Uses `sessionStorage` — lasts one browser session
+
+---
+
+## Git & Deployment
+- **Deployment:** GitHub Pages from `main` branch, custom domain `vonclausburg.com`
+- Pushing to `main` triggers automatic deploy
+- Commit format: short description + `Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>`
 - **Always run git from:** `/Users/ashleyvonclausburg/Desktop/Portfolio`
-- **Before committing, run `git status`** to check for untracked files — especially new images in `public/images/`. If HTML references an image, that image must be committed too. Worktrees only get tracked files, so untracked images will appear broken.
-- Note: git committer name/email not configured — harmless warning, can be fixed with `git config --global user.name/email`
+- **Before committing, run `git status`** to check for untracked files — especially new images in `public/images/`
 
 ---
 
 ## Figma MCP
 - Requires Figma Desktop App open in Dev Mode
 - Local MCP server: `http://127.0.0.1:3845/mcp`
-- **Important:** On large nodes, call `get_metadata` first → then `get_design_context` on specific sublayer IDs
-- Resume Figma node: `node-id=3-4` (page 1 of the design file)
+- On large nodes, call `get_metadata` first → then `get_design_context` on specific sublayer IDs
 
 ---
 
-## Pending / Next Steps
+## Pending
 
-### Active
-- [ ] **null-state.html** — fill in body content once designs are ready (hero is done)
-
-### Soon
-- [ ] Set up Netlify deployment with custom domain
 - [ ] Remove styleguide link from index.html before launch
-- [ ] Add meta descriptions and Open Graph tags to all pages
-- [ ] Add favicon
 - [ ] Refactor hardcoded CSS values to use type.css variables
 - [ ] Clean up inline styles in case study HTML files
-
-### Done
-- [x] ~~Update homepage About section copy~~ (done)
-- [x] ~~Update homepage footer social links~~ (done)
-- [x] ~~Make nav consistent across all pages~~ (Work | Resume | Contact)
-- [x] ~~Migrate all Wix CDN images to local~~ (41 files)
-- [x] ~~Export Figma hero images locally~~
-
-### Polish
 - [ ] Add scroll animations to career section rows
-- [ ] Set up git config name/email: `git config --global user.name "Ashley vonClausburg"`
 
 ---
 
 ## Notes
-- `case-study.html` + `case-study.css` are legacy/unused — can be deleted eventually
-- `journey.jpg` (145KB) is the old low-res journey map — `journey2.jpg` (1MB) is current
-- Lightbox is implemented in case-study-v1.html (click to expand on journey map)
-- WordPress.com and Automattic are the same employer (2017–2021) but listed separately in the career section to match how they appear as distinct case studies
-- Square (2021–2026) is intentionally omitted from the career section — it's the primary employer and already prominent through the Product Design case studies
+- WordPress.com and Automattic are the same employer (2017–2021) but listed separately in the career section
+- Square (2021–2026) is intentionally omitted from the career section — already prominent through Product Design case studies
+- `journey.jpg` is the old low-res journey map — `journey2.jpg` is current
