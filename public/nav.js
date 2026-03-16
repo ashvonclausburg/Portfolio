@@ -3,8 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.querySelector('nav');
   if (!nav) return;
 
-  // Detect base path (works for both local dev and GitHub Pages)
-  const base = document.querySelector('base')?.getAttribute('href') || '/';
+  // Detect base path from this script's own URL
+  // In dev: /nav.js → base = /
+  // On GitHub Pages: /Portfolio/nav.js → base = /Portfolio/
+  const scriptSrc = document.querySelector('script[src*="nav.js"]')?.src || '';
+  const base = scriptSrc ? new URL(scriptSrc).pathname.replace('nav.js', '') : '/';
 
   nav.innerHTML = `
     <a class="nav-name" href="${base}">AV</a>
