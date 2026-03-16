@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reducing Risk Freeze Rates — Ashley vonClausburg</title>
+    <meta name="description" content="A case study on reducing risk freeze rates at Square through proactive identity verification." />
+    <meta property="og:title" content="Reducing Risk Freeze Rates — Ashley vonClausburg" />
+    <meta property="og:description" content="A case study on reducing risk freeze rates at Square through proactive identity verification." />
+    <meta property="og:type" content="article" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
@@ -100,19 +105,19 @@
         <div class="cs-two-col cs-two-col--flat">
           <div>
             <span class="cs-problem-num">Problem #1</span>
-            <h3 class="cs-subsection-title" style="margin-top: 8px;">Requesting ID verification too late causes business harm and clashes with seller expectations</h3>
+            <h3 class="cs-subsection-title" style="margin-top: var(--space-2);">Requesting ID verification too late causes business harm and clashes with seller expectations</h3>
             <p class="cs-body">Good sellers expect Square to verify their identity in a way that won't interfere with access to their funds, and at moments that feel natural. Verifying too late, after a seller has already completed onboarding and begun processing payments, creates frustration, confusion, and ultimately churn.</p>
           </div>
           <div>
             <span class="cs-problem-num">Problem #2</span>
-            <h3 class="cs-subsection-title" style="margin-top: 8px;">Requesting ID verification too early means fewer signals and more sellers impacted</h3>
+            <h3 class="cs-subsection-title" style="margin-top: var(--space-2);">Requesting ID verification too early means fewer signals and more sellers impacted</h3>
             <p class="cs-body">The earlier we try to prevent fraud, the fewer signals we have to distinguish good actors from bad. Verifying too early risks creating friction that hurts activation or payment conversion rates. An experiment requiring 100% of sellers to upload identity documents before taking payments resulted in even worse damage to bottom-of-funnel metrics.</p>
           </div>
         </div>
 
         <!-- QUOTES -->
-        <p class="cs-section-label" style="margin-top: 40px; margin-bottom: 8px;">Seller Feedback</p>
-        <div class="cs-quotes cs-quotes--three" style="margin-top: 0;">
+        <p class="cs-section-label" style="margin-top: var(--space-10); margin-bottom: var(--space-2);">Seller Feedback</p>
+        <div class="cs-quotes cs-quotes--three" class="mt-0">
           <blockquote class="cs-quote">
             <p>"Pretty upset that my account has been in review for over a week with almost $3,000 completely untouchable... I've had my account for only a month."</p>
             <cite>SMB Seller, Photography</cite>
@@ -144,8 +149,8 @@
 
         <p class="cs-body">A key moment came while mapping out the seller experience with gating. I advocated that, for an optimal user experience, we needed to give sellers the option to do DocIDV prior to encountering blocked payment methods. We knew there was a high likelihood for confusion or frustration during the initial payment flow when sellers realized not all payment methods were accessible. I felt that sellers would be more understanding if they had already been given the choice and declined — and that we could get more sellers to complete verification proactively, avoiding the gate entirely.</p>
 
-        <button class="cs-journey-img-btn" onclick="openLightbox('/images/ProactiveDocIDV/Warn_Lock.png', 'Warn + Lock proof of concept screens')" aria-label="View Warn + Lock screens" style="margin-top: 24px;">
-          <img class="cs-solution-img" src="/images/ProactiveDocIDV/Warn_Lock.png" alt="Warn + Lock proof of concept screens" style="margin-top: 0;" />
+        <button class="cs-journey-img-btn" onclick="openLightbox('/images/ProactiveDocIDV/Warn_Lock.png', 'Warn + Lock proof of concept screens')" aria-label="View Warn + Lock screens" style="margin-top: var(--space-6);">
+          <img class="cs-solution-img" src="/images/ProactiveDocIDV/Warn_Lock.png" alt="Warn + Lock proof of concept screens" class="mt-0" />
           <span class="cs-journey-img-hint">Click to expand</span>
         </button>
       </div>
@@ -175,10 +180,10 @@
           <source src="/images/ProactiveDocIDV/UsabilityPrototype.mov" type="video/quicktime" />
         </video>
 
-        <h3 class="cs-subsection-title" style="margin-top: 40px;">Key takeaways</h3>
+        <h3 class="cs-subsection-title" style="margin-top: var(--space-10);">Key takeaways</h3>
         <p class="cs-body">Overall, the prototype was a success. We found that sellers were understanding and appreciative of the security rationale for blocking certain kinds of payments. However, they did want more explicit information around what payment types were available pre and post verification to help them decide if they wanted to move forward with DocIDV in that moment.</p>
 
-        <p class="cs-section-label" style="margin-top: 40px;">Research Recommendations</p>
+        <p class="cs-section-label" style="margin-top: var(--space-10);">Research Recommendations</p>
         <div class="cs-tabs-card">
           <div class="cs-tabs">
             <button class="cs-tab is-active" data-tab="rec-0"><span class="cs-problem-num">01</span> List payment options</button>
