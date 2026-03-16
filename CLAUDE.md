@@ -136,10 +136,11 @@ Per-image CSS classes in `style.css` for images that need special cropping in th
 - Inline `style="object-position: left top;"` — anchors Square DocIDV gradient to top-left
 - Inline `style="object-position: top;"` — anchors Null State image to show gradient at top
 
-### Wix CDN Images (external thumbnails)
-Automattic and WordPress.com thumbnails use Wixstatic URLs. Change the `al_X` parameter to control server-side crop alignment:
-- `al_c` = center (default), `al_t` = top, `al_b` = bottom, `al_l` = left, `al_r` = right
-- Example: `...fill/w_800,h_500,al_t,...` crops from the top
+### Local Images (migrated from Wix CDN)
+All images are now served locally from `public/images/`. Organized by case study:
+- `public/images/Automattic/` — 22 files (hero, typography, layouts, photography, web, social, etc.)
+- `public/images/WordPress/` — 9 files (hero, ads, emails, banners)
+- `public/images/WPSocialAds/` — 8 files (hero, pinterest, motion, 4 videos)
 
 ### Video
 - Use native HTML5 `<video autoplay loop muted playsinline>`
@@ -173,13 +174,20 @@ Automattic and WordPress.com thumbnails use Wixstatic URLs. Change the `al_X` pa
 
 ### Soon
 - [ ] Set up Netlify deployment with custom domain
-- [ ] Remove styleguide link from index.html before launch (the `<div>` above `<script>` tag)
-- [ ] Update homepage About section copy (currently placeholder)
-- [ ] Update homepage footer social links (GitHub/LinkedIn/Twitter)
-- [ ] Update nav contact email (currently placeholder)
+- [ ] Remove styleguide link from index.html before launch
+- [ ] Add meta descriptions and Open Graph tags to all pages
+- [ ] Add favicon
+- [ ] Refactor hardcoded CSS values to use type.css variables
+- [ ] Clean up inline styles in case study HTML files
+
+### Done
+- [x] ~~Update homepage About section copy~~ (done)
+- [x] ~~Update homepage footer social links~~ (done)
+- [x] ~~Make nav consistent across all pages~~ (Work | Resume | Contact)
+- [x] ~~Migrate all Wix CDN images to local~~ (41 files)
+- [x] ~~Export Figma hero images locally~~
 
 ### Polish
-- [ ] Export Figma hero images locally (some currently served from localhost:3845)
 - [ ] Add scroll animations to career section rows
 - [ ] Set up git config name/email: `git config --global user.name "Ashley vonClausburg"`
 

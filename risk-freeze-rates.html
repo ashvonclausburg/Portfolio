@@ -3,22 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reducing Risk Freeze Rates - Ashley vonClausburg (v1)</title>
+    <title>Reducing Risk Freeze Rates — Ashley vonClausburg</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/src/style.css" />
     <link rel="stylesheet" href="/src/type.css" />
     <link rel="stylesheet" href="/src/case-study-v1.css" />
+    <script src="/src/password-gate.js" defer></script>
   </head>
   <body>
 
     <!-- NAV -->
     <nav>
-      <a class="nav-name" href="/">Ashley vonClausburg</a>
+      <a class="nav-name" href="/">AV</a>
       <div class="nav-links">
         <a href="/#work">Work</a>
-        <a href="/#about">About</a>
+        <a href="/images/vonClausburgResume2026.pdf" target="_blank" rel="noopener">Resume</a>
         <a href="mailto:vonclausburg@gmail.com">Contact</a>
       </div>
     </nav>
@@ -55,7 +56,7 @@
     <section class="cs-section">
       <div class="cs-section-inner">
         <p class="cs-section-label">Background</p>
-        <h2 class="cs-section-title">Risky Business for Services Sellers</h2>
+        <h2 class="cs-section-title">Risky business for services sellers</h2>
         <p class="cs-body">
           Square's Risk team relied on a combination of automated and human systems to protect the platform and its users from fraud. But by 2024, those same systems were increasingly catching good sellers in the crossfire, driving up seller complaints, lengthening risk resolution times, and ultimately accelerating GPV churn.
         </p>
@@ -94,7 +95,7 @@
       <div class="cs-section-inner">
         <p class="cs-section-label">Process</p>
         <h2 class="cs-section-title">Defining our approach</h2>
-        <p class="cs-body">While other teams focused on improving risk model accuracy and refining how risk actions were communicated, my team was tasked with tackling a specifically fake account risk actions. These occur when Square suspects a seller may not be who they claim to be, resulting in frozen funds until the seller provides identifying documentation. These freezes were responsible for 93% of GPV churn. As we explored how to reduce this impact, we identified that the timing of when we request these documents presented the biggest challenge, and framed it as a two-part "Goldilocks" problem.</p>
+        <p class="cs-body">While other teams focused on improving risk model accuracy and refining how risk actions were communicated, my team was tasked with specifically tackling fake account risk actions. These occur when Square suspects a seller may not be who they claim to be, resulting in frozen funds until the seller provides identifying documentation. These freezes were responsible for 93% of GPV churn. As we explored how to reduce this impact, we identified that the timing of when we request these documents presented the biggest challenge, and framed it as a two-part "Goldilocks" problem.</p>
 
         <div class="cs-two-col cs-two-col--flat">
           <div>
@@ -136,7 +137,7 @@
           <img src="/images/ProactiveDocIDV/journey2.jpg" alt="Journey map comparing current risk experience vs. gated CNP payments" />
           <span class="cs-journey-img-hint">Click to expand</span>
         </button>
-        <h3 class="cs-subsection-title">Proof of concept: Optional DocIDV + Gating CNP Payments on VT</h3>
+        <h3 class="cs-subsection-title">Proof of concept: Optional DocIDV + gating CNP payments on VT</h3>
         <p class="cs-body">We audited CNP payments across all payment platforms including Invoices, Virtual Terminal, and the Square POS. Ultimately, due to internal constraints around testing timelines and mobile eng resources, we aligned on a proof of concept that focused on the web-based payment platform Virtual Terminal only. If we saw a positive impact from this small, segmented test, then we could justify further investment to scale it across other platforms.</p>
 
         <!-- TODO: Add Gating VT proof of concept image -->
@@ -266,7 +267,7 @@
 
     <!-- NAV FOOTER -->
     <footer class="cs-footer">
-      <a href="/" class="cs-back">← Back to work</a>
+      <a href="/#work" class="cs-back">← Back to work</a>
       <p class="cs-footer-copy">© 2026 Ashley vonClausburg</p>
     </footer>
 
@@ -294,5 +295,6 @@
         });
       });
     </script>
+    <script src="/src/nav.js"></script>
   </body>
 </html>
