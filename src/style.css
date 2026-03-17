@@ -85,7 +85,7 @@ nav {
 
 /* HERO */
 .hero {
-  min-height: 90vh;
+  height: min(90vh, 900px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
