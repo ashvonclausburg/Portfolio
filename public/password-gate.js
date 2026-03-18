@@ -18,6 +18,7 @@
 
   // Hide page content immediately
   document.documentElement.style.overflow = "hidden";
+  document.documentElement.style.visibility = "visible";
 
   // Build gate UI
   const gate = document.createElement("div");
@@ -46,6 +47,7 @@
       justify-content: center;
       background: #fff;
       font-family: 'Inter', sans-serif;
+      visibility: visible;
     }
     .gate-card {
       max-width: 400px;
@@ -144,6 +146,7 @@
       gate.remove();
       style.remove();
       document.documentElement.style.overflow = "";
+      document.documentElement.style.visibility = "";
     } else {
       input.classList.add("gate-input--error");
       error.hidden = false;
