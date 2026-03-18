@@ -263,6 +263,35 @@
   margin-top: auto;
 }
 
+.cs-feedback-avatars {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+.cs-feedback-avatars img {
+  width: 64px;
+  height: 64px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.cs-pull-quote {
+  font-size: var(--t-xs);
+  font-weight: var(--w-regular);
+  font-style: italic;
+  color: var(--color-text-soft);
+  margin: var(--space-2) 0 var(--space-4);
+  padding: var(--space-1) 0 var(--space-1) var(--space-4);
+  border-left: 2px solid rgba(0,0,0,0.12);
+  line-height: var(--lh-relaxed);
+}
+.cs-pull-quote s {
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+  color: var(--color-text-muted);
+}
+
 .cs-callout {
   display: flex;
   align-items: center;
@@ -618,8 +647,11 @@
   background: #f8f9fa;
   border-left: 3px solid #000;
   border-radius: 0 12px 12px 0;
-  padding: var(--space-8) 36px;
-  margin-top: var(--space-10);
+  padding: var(--space-4) 36px var(--space-4) var(--space-8);
+  margin-top: var(--space-3);
+}
+.cs-narrative-callout + .cs-narrative-callout {
+  margin-top: var(--space-4);
 }
 .cs-narrative-callout-title {
   font-size: var(--t-base);
@@ -631,7 +663,7 @@
   margin-bottom: 0;
 }
 
-.cs-narrative-callout .cs-arrow-list {
+.cs-arrow-list {
   list-style: none;
   padding-left: 0;
   display: flex;
@@ -640,19 +672,96 @@
   margin-top: var(--space-4);
   margin-bottom: 0;
 }
-.cs-narrative-callout .cs-arrow-list li {
+.cs-arrow-list li {
   display: flex;
   align-items: baseline;
   gap: 10px;
   font-size: 15px;
   line-height: 1.6;
-  color: var(--color-text-muted);
+  color: var(--color-text-soft);
 }
-.cs-narrative-callout .cs-arrow-list li::before {
-  content: "→";
+.cs-arrow-list li::before {
+  content: "\2192";
   flex-shrink: 0;
   font-weight: var(--w-semi);
   color: var(--color-text);
+}
+
+/* ── Seller interview grid ── */
+.cs-seller-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.cs-seller-card {
+  display: flex;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  background: #fafafa;
+  border-radius: 14px;
+}
+
+.cs-seller-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.cs-seller-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cs-seller-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.cs-seller-industry {
+  font-size: var(--t-base);
+  font-weight: var(--w-bold);
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--space-2) 0;
+}
+
+.cs-seller-context {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.cs-seller-facts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-2);
+}
+
+.cs-seller-facts li {
+  font-size: 11px;
+  font-weight: var(--w-medium);
+  letter-spacing: 0.02em;
+  color: var(--color-text-soft);
+  background: #fff;
+  padding: 3px 10px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .cs-seller-grid {
+    grid-template-columns: 1fr;
+  }
+  .cs-seller-facts li { white-space: normal; }
 }
 
 .cs-footer {
@@ -686,9 +795,8 @@
 
 .cs-journey-img-btn img {
   display: block;
-  width: calc(100% + 4px);
+  width: 100%;
   height: auto;
-  margin: -2px;
   transition: opacity 0.2s;
 }
 
@@ -714,18 +822,23 @@
   inset: 0;
   background: rgba(0,0,0,0.85);
   z-index: 1000;
-  align-items: center;
-  justify-content: center;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding: var(--space-10);
 }
 
-.cs-lightbox.is-open { display: flex; }
+.cs-lightbox.is-open {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
 
 .cs-lightbox img {
-  max-width: 100%;
-  max-height: 90vh;
+  width: 100%;
+  max-width: 1400px;
   border-radius: 12px;
   box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+  margin: auto;
 }
 
 .cs-lightbox-close {
@@ -770,6 +883,132 @@
   letter-spacing: 0.03em;
   text-align: center;
   min-height: 200px;
+}
+
+/* ── Spectrum Visual ── */
+.cs-spectrum {
+  margin: var(--space-10) 0 var(--space-4);
+  padding: var(--space-10) var(--space-8);
+  background: #fafafa;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.cs-spectrum-annotation {
+  text-align: center;
+  font-size: var(--t-sm);
+  color: var(--color-accent);
+  font-weight: var(--w-medium);
+  margin-bottom: var(--space-8);
+}
+
+.cs-spectrum-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.cs-spectrum-end {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-weight: var(--w-regular);
+}
+
+.cs-spectrum-end strong {
+  font-weight: var(--w-bold);
+  display: block;
+  color: var(--color-text-soft);
+}
+
+.cs-spectrum-end--right {
+  text-align: right;
+}
+
+.cs-spectrum-line {
+  position: relative;
+  height: 3px;
+  background: linear-gradient(to right, #99c2f0, var(--color-accent), #99c2f0);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  padding: 0 calc(100% / 6);
+}
+
+.cs-spectrum-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #99c2f0;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.cs-spectrum-dot--active {
+  width: 14px;
+  height: 14px;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(0,106,255,0.15);
+}
+
+/* Columns: category title + examples stacked together */
+.cs-spectrum-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.cs-spectrum-col {
+  text-align: left;
+}
+
+.cs-spectrum-cat {
+  font-size: var(--t-xs);
+  font-weight: var(--w-bold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+  margin: 0 0 var(--space-2);
+}
+
+.cs-spectrum-col--active .cs-spectrum-cat {
+  color: var(--color-text);
+}
+
+.cs-spectrum-ex {
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-2);
+}
+
+.cs-spectrum-col--active .cs-spectrum-ex {
+  color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .cs-spectrum {
+    padding: var(--space-8) var(--space-5);
+  }
+  .cs-spectrum-bar {
+    gap: var(--space-2);
+  }
+  .cs-spectrum-end {
+    font-size: 9px;
+  }
+  .cs-spectrum-columns {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ── Approach cards (stacked, text left / images right) ── */
@@ -962,6 +1201,104 @@
 
 .cs-tab-panel--stack.is-active {
   display: block;
+}
+
+/* ── Prototype video + pros/cons row ── */
+.cs-proto-row {
+  display: flex;
+  gap: var(--space-8);
+  align-items: flex-start;
+}
+
+.cs-proto-video {
+  flex: 0 0 60%;
+}
+.cs-section-inner > .cs-proto-row > .cs-proto-video {
+  margin-top: 20px;
+}
+
+.cs-proto-video video {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.cs-proto-details {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.cs-tabs-card .cs-proto-details .cs-body {
+  font-size: var(--t-sm);
+  line-height: var(--lh-normal);
+}
+
+/* ── Participants grid ── */
+.cs-participants {
+  display: flex;
+  gap: var(--space-10);
+  margin-top: var(--space-3);
+}
+
+.cs-participants-group {
+  flex: 1;
+  background: #fafafa;
+  border-radius: 14px;
+  padding: var(--space-6);
+}
+
+.cs-participants-label {
+  font-size: var(--t-xs);
+  font-weight: var(--w-semi);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-3);
+}
+
+.cs-participants-row {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.cs-participant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.cs-participant img {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.cs-participant span {
+  font-size: var(--t-xs);
+  color: var(--color-text-soft);
+  text-align: center;
+  line-height: var(--lh-tight);
+}
+
+@media (max-width: 768px) {
+  .cs-participants { flex-direction: column; gap: var(--space-6); }
+}
+
+@media (max-width: 768px) {
+  .cs-proto-row {
+    flex-direction: column;
+  }
+  .cs-proto-video {
+    flex: none;
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {

@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mobile Contracts for In-Person Signatures — Ashley vonClausburg</title>
+    <title>Signing Contracts on Mobile Devices — Ashley vonClausburg</title>
     <meta name="description" content="A case study on contracts at the point of service at Square." />
-    <meta property="og:title" content="Mobile Contracts for In-Person Signatures — Ashley vonClausburg" />
+    <meta property="og:title" content="Signing Contracts on Mobile Devices — Ashley vonClausburg" />
     <meta property="og:description" content="A case study on contracts at the point of service at Square." />
     <meta property="og:type" content="article" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -33,8 +33,8 @@
       <div class="cs-hero-inner">
         <div class="cs-hero-text">
           <p class="cs-label">Case Study · Product Design</p>
-          <h1 class="cs-title">Mobile Contracts for In-Person Signatures</h1>
-          <p class="cs-subtitle">Redesigning mobile contracts to allow sellers to collect signatures at the point of service</p>
+          <h1 class="cs-title">Signing Contracts on Mobile Devices</h1>
+          <p class="cs-subtitle">Redesigned the mobile contracts workflow to allow sellers to collect signatures at the point of service</p>
           <div class="cs-meta-row">
             <div class="cs-meta-item">
               <span class="cs-meta-label">Company</span>
@@ -44,17 +44,338 @@
               <span class="cs-meta-label">Role</span>
               <span class="cs-meta-value">Product Designer</span>
             </div>
-            <div class="cs-meta-item">
-              <span class="cs-meta-label">Focus</span>
-              <span class="cs-meta-value">UX, Workflows</span>
-            </div>
           </div>
         </div>
         <div class="cs-hero-image">
-          <img src="/images/ProactiveDocIDV/Contracts/ContractHero.jpg" alt="Mobile Contracts for In-Person Signatures" />
+          <img src="/images/ProactiveDocIDV/Contracts/ContractHero.jpg" alt="Signing Contracts on Mobile Devices" />
         </div>
       </div>
     </header>
+
+    <!-- BACKGROUND -->
+    <section class="cs-section">
+      <div class="cs-section-inner">
+        <p class="cs-section-label">Background</p>
+        <h2 class="cs-section-title">Service contracts were going unsigned</h2>
+        <p class="cs-body">
+          For many service-based sellers, buyer contracts are essential and must be completed before a service can be performed. The standard workflow was straightforward: send the contract to the buyer in advance of their appointment and have it signed before they arrive. The problem was that a meaningful percentage of buyers were showing up with contracts unsigned. Sellers could only send contracts via email, but there was no way for them to pull up the existing contract for the buyer to complete on the spot.
+        </p>
+
+        <!-- QUOTES -->
+        <p class="cs-section-label" style="margin-top: var(--space-10); margin-bottom: var(--space-2);">Seller Feedback</p>
+        <div class="cs-quotes cs-quotes--three">
+          <blockquote class="cs-quote">
+            <p>"Most people are signing digitally - but there are always a few people that they inevitably have to print out the contract and have them sign in person. Would love to be able to click the contract and just have them sign it"</p>
+          </blockquote>
+          <blockquote class="cs-quote">
+            <p>"We love using contracts, however there are a couple of things we would love to see to make it run a lot smoother: The ability to pass our client our ipad to fill their empty consultation form out if they haven't already completed it."</p>
+          </blockquote>
+          <blockquote class="cs-quote">
+            <p>"When Square is used as a waiver, we want a tablet at the front for people to sign. Same goes for in person sales that include a contract."</p>
+          </blockquote>
+        </div>
+
+        <p class="cs-body"><strong>Our hypothesis:</strong> Based on seller feedback and the observed gaps in our product, we believed sellers would benefit from being able to turn on some kind of "kiosk" mode that would allow them to use their mobile device to get buyers to sign contracts in-person.</p>
+      </div>
+    </section>
+
+    <!-- COMPETITIVE AUDIT -->
+    <section class="cs-section cs-section--gray">
+      <div class="cs-section-inner">
+        <p class="cs-section-label">Research</p>
+        <h2 class="cs-section-title">Competitive audit and seller interviews</h2>
+        <p class="cs-body">
+          Many contract competitors already offered in-person signing experiences. To better understand existing user expectations, we did a competitive audit of SignNow, Smartwaiver, Docusign, Jotform, and Pandadoc. We used this audit to identify the table-stakes features buyers and sellers would want for an in-person signing experience.
+        </p>
+        <img src="/images/Contracts/CompetitiveAudit.png" alt="Competitive audit of in-person signing across SignNow, Smartwaiver, Docusign, Jotform, and Pandadoc" style="width: 100%; display: block; border-radius: 12px; margin-top: var(--space-6);" />
+        <h3 class="cs-subsection-title" style="margin-top: var(--space-10);">Seller interviews</h3>
+        <p class="cs-body">
+          In-person workflows were new for the Contracts product, so we conducted interviews with sellers to better understand how contracts fit into their physical workday.
+        </p>
+        <div class="cs-seller-grid">
+          <div class="cs-seller-card">
+            <div class="cs-seller-img">
+              <img src="/images/Contracts/Dogboarding_training.jpg" alt="Dog boarding and training business" />
+            </div>
+            <div class="cs-seller-info">
+              <p class="cs-seller-industry">Dog boarding &amp; training</p>
+              <p class="cs-seller-context">Uses Square Contracts for one waiver and emailed PDF or printed document for second contract</p>
+              <ul class="cs-seller-facts">
+                <li>2 employees</li>
+                <li>Mobile + brick &amp; mortar</li>
+                <li>Dozens of customers / mo</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cs-seller-card">
+            <div class="cs-seller-img">
+              <img src="/images/Contracts/Beauty_salon.jpg" alt="Beauty salon business" />
+            </div>
+            <div class="cs-seller-info">
+              <p class="cs-seller-industry">Beauty salon</p>
+              <p class="cs-seller-context">Primarily uses Square Contracts but uses a third-party solution for in-person signing</p>
+              <ul class="cs-seller-facts">
+                <li>8 employees</li>
+                <li>2 brick &amp; mortar locations</li>
+                <li>200–300 customers / mo</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cs-seller-card">
+            <div class="cs-seller-img">
+              <img src="/images/Contracts/Automotive_Services.jpg" alt="Automotive services business" />
+            </div>
+            <div class="cs-seller-info">
+              <p class="cs-seller-industry">Automotive services</p>
+              <p class="cs-seller-context">Uses Square for everything but contracts. Uses HelloSign for in-person signing.</p>
+              <ul class="cs-seller-facts">
+                <li>3 employees</li>
+                <li>1 brick &amp; mortar store</li>
+                <li>4–5 customers / day</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cs-seller-card">
+            <div class="cs-seller-img">
+              <img src="/images/Contracts/Tailoring_alterations.jpg" alt="Tailoring and alterations business" />
+            </div>
+            <div class="cs-seller-info">
+              <p class="cs-seller-industry">Tailoring &amp; alterations</p>
+              <p class="cs-seller-context">Only uses Square for invoices. Uses Hubspot for contracts and Shopify for online business.</p>
+              <ul class="cs-seller-facts">
+                <li>18 employees</li>
+                <li>1 store + online</li>
+                <li>Mostly online, in-person for weddings</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p class="cs-body" style="margin-top: var(--space-10);">
+          We spoke with 4 professional service sellers who had explicitly requested an in-person signing experience, and reviewed recordings from 3 previous health and beauty seller interviews. Despite working in vastly different industries (cars, dogs, dresses, and hair removal), all of them followed a nearly identical workflow around contracts.
+        </p>
+        <button class="cs-journey-img-btn" onclick="openLightbox('/images/Contracts/userjourneymap.png', 'User Journey Map')" aria-label="View full user journey map">
+          <img src="/images/Contracts/userjourneymap.png" alt="User journey map showing the contract workflow from creation to signing" />
+          <span class="cs-journey-img-hint">Click to expand</span>
+        </button>
+
+        <p class="cs-body" style="margin-top: var(--space-10);">
+          We found that check-in, the moment a seller needs to potentially retrieve a contract for an arriving buyer, is a particularly high-stress point in the workflow. Every second counts. All sellers expressed a strong preference for handing buyers a tablet to complete the contract. Additionally, they needed that specific contract to be automatically associated with the right buyer. A blank waiver requiring manual re-association would create more friction than it solved.
+        </p>
+
+        <h3 class="cs-subsection-title">A spectrum of in-person contract needs</h3>
+        <p class="cs-body">
+          Looking across our competitive audit and interviews, we found that in-person contract needs operate across a spectrum. The use case our sellers were requesting, and the one that applied most broadly, was what we called "reusable templates." These are contracts where the structure is consistent across clients, but the content (names, dates, and specific service details) is unique to each individual buyer. They generally must be associated with a specific, existing buyer before a service can begin.
+        </p>
+        <!-- Spectrum Visual -->
+        <img src="/images/Contracts/ContractSpectrum.svg" alt="In-person contract needs spectrum showing custom contracts, reusable templates, and blank waivers" style="width: 100%; display: block; margin-top: var(--space-6);" />
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section class="cs-section">
+      <div class="cs-section-inner">
+        <p class="cs-section-label">Approach</p>
+        <h2 class="cs-section-title">Scoping the solution</h2>
+        <p class="cs-body">
+          Based on the core need our research identified as well as realistic scope for what we could deliver in the first milestone, we defined product requirements specifically focused on allowing previously sent contracts to be signed in person.
+        </p>
+        <p class="cs-section-label">Proposed Flow</p>
+        <img src="/images/Contracts/ProposedFlow.svg" alt="Proposed flow for in-person contract signing" style="width: 100%; display: block; border-radius: 12px; margin-top: var(--space-6);" />
+
+        <div class="cs-tabs-card" style="margin-top: var(--space-10);">
+          <div class="cs-tabs">
+            <button class="cs-tab is-active" data-tab="scope-0">Product Requirements</button>
+            <button class="cs-tab" data-tab="scope-1">Out of Scope</button>
+          </div>
+
+          <div class="cs-tab-panel cs-tab-panel--stack is-active" data-panel="scope-0">
+            <ul class="cs-arrow-list">
+              <li>Allow any previously sent contract to be signed in-person within the Contracts applet</li>
+              <li>Multiple contracts can be signed as part of a single in-person flow</li>
+              <li>Sellers can lock and unlock signing mode to protect sensitive data from buyers</li>
+              <li>Contracts Dashboard, Contracts App, and Customers Directory all simultaneously update</li>
+              <li>The flow should work for a shared device as well as a separate, dedicated device.</li>
+            </ul>
+          </div>
+
+          <div class="cs-tab-panel cs-tab-panel--stack" data-panel="scope-1">
+            <ul class="cs-arrow-list">
+              <li>
+                <span><strong>In-person signing on a new contract</strong> — Some sellers need to create and sign a contract on the spot while they're with a client. Supporting this would require allowing contract signing without sending an email first, which would add additional scope. Our new flow will only support in-person signing after a contract has already been sent.</span>
+              </li>
+              <li>
+                <span><strong>In-person signing without an existing buyer</strong> — Some sellers need to process walk-ins or high volumes quickly, without a pre-existing client relationship. Supporting this would require a template-based flow that could be filled out before being tied to a buyer, which would add additional scope. Our new flow only supports contracts associated with an existing buyer.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- USABILITY TESTING -->
+    <section class="cs-section cs-section--gray">
+      <div class="cs-section-inner">
+        <p class="cs-section-label">Research</p>
+        <h2 class="cs-section-title">Usability testing</h2>
+        <p class="cs-body">
+          Once we aligned on the high-level flow, we wanted to identify the fastest path from checking a contract's status to getting it signed in person. Given that all sellers expressed a preference for using a tablet to collect missing signatures, we designed both prototypes around a shared device between buyer and seller.
+        </p>
+
+        <div class="cs-tabs-card" style="margin-top: var(--space-10);">
+          <div class="cs-tabs">
+            <button class="cs-tab is-active" data-tab="proto-0">Prototype A: More Menu</button>
+            <button class="cs-tab" data-tab="proto-1">Prototype B: Signing Mode</button>
+          </div>
+
+          <div class="cs-tab-panel cs-tab-panel--stack is-active" data-panel="proto-0">
+            <div class="cs-proto-row">
+              <div class="cs-proto-video">
+                <video autoplay loop muted playsinline>
+                  <source src="/images/Contracts/PrototypeA.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="cs-proto-details">
+                <div>
+                  <p class="cs-section-label" style="margin-bottom: var(--space-1);">Pros</p>
+                  <p class="cs-body">Matches the seller's existing flow of checking contract status and moving directly into in-person signing.</p>
+                </div>
+                <div>
+                  <p class="cs-section-label" style="margin-bottom: var(--space-1);">Cons</p>
+                  <p class="cs-body" style="margin-bottom: 0;">For sellers processing a high volume of contracts or using a dedicated device, this approach doesn't offer a persistent mode they can leave active.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-tab-panel cs-tab-panel--stack" data-panel="proto-1">
+            <div class="cs-proto-row">
+              <div class="cs-proto-video">
+                <video autoplay loop muted playsinline>
+                  <source src="/images/Contracts/PrototypeB.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="cs-proto-details">
+                <div>
+                  <p class="cs-section-label" style="margin-bottom: var(--space-1);">Pros</p>
+                  <p class="cs-body">Keeps the seller in a continuous state of pulling up contracts for in-person signing, which could work well for high-volume sellers or those using a dedicated device.</p>
+                </div>
+                <div>
+                  <p class="cs-section-label" style="margin-bottom: var(--space-1);">Cons</p>
+                  <p class="cs-body" style="margin-bottom: 0;">Doesn't match many sellers' current mental model, making it less intuitive than starting from the individual contract.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="cs-body" style="margin-top: var(--space-10);">
+          We tested both prototypes with 3 sellers from our initial research who had explicitly requested in-person signing, as well as 3 new sellers who sent a high volume of contracts with in-person transactions. Speaking to the previous sellers allowed us to check if we correctly interpreted the problems from our initial discovery phase. Speaking to new sellers allowed us to stress test the solution for new businesses with unknown workflows that we hadn't explicitly designed for.
+        </p>
+        <h3 class="cs-subsection-title">Feedback</h3>
+        <div class="cs-two-col cs-two-col--flat">
+          <div>
+            <div class="cs-feedback-avatars">
+              <img src="/images/Contracts/Dogboarding_training.jpg" alt="Dog boarding and training" />
+              <img src="/images/Contracts/Beauty_salon.jpg" alt="Beauty salon" />
+              <img src="/images/Contracts/Automotive_Services.jpg" alt="Automotive services" />
+            </div>
+            <p class="cs-seller-industry" style="margin-bottom: var(--space-2);">Previous sellers</p>
+            <p class="cs-body">
+              Previous sellers unanimously preferred Prototype A. All sellers thought about contracts at the individual level, so starting from a dashboard simply didn't match their mental model or workflow.
+            </p>
+            <blockquote class="cs-pull-quote">"This is perfect."</blockquote>
+            <p class="cs-body" style="margin-bottom: 0;">
+              However, when prompted, all but one seller said they would have serious privacy concerns about handing a client a shared device without some kind of locking mechanism. Most said the absence of this feature would be a dealbreaker.
+            </p>
+            <blockquote class="cs-pull-quote"><s>"This is perfect."</s></blockquote>
+          </div>
+          <div>
+            <div class="cs-feedback-avatars">
+              <img src="/images/Contracts/Tattoo_piercing.jpg" alt="Tattoo and piercing" />
+              <img src="/images/Contracts/Lash_extensions.jpg" alt="Lash extensions" />
+              <img src="/images/Contracts/Medspa.jpg" alt="Medspa" />
+            </div>
+            <p class="cs-seller-industry" style="margin-bottom: var(--space-2);">New sellers</p>
+            <p class="cs-body">
+              While all new sellers followed the same expected contract workflow and faced the same issues with getting them signed prior to service, their solution expectations diverged pretty dramatically from our previous sellers.
+            </p>
+            <blockquote class="cs-pull-quote">"I only have one iPad. What if there are multiple people trying to check in?"</blockquote>
+            <p class="cs-body" style="margin-bottom: 0;">
+              Two of the three new sellers said they would never use a shared device model and the third did not like it as a solution. Concerns centered on not having enough devices and client privacy. Additionally, without any kind of prompting, all three new sellers said their ideal solution would be to send the contract directly to their client's phone via SMS.
+            </p>
+            <blockquote class="cs-pull-quote">"I'd like to pull up the contract and text it to my client's phone so they can sign it there."</blockquote>
+          </div>
+        </div>
+        <p class="cs-body" style="margin-top: var(--space-8);">
+          The research revealed that a shared device solution, while preferred over a dashboard-based mode, still faced real resistance from sellers outside of our initial use case. For a meaningful portion of users, it simply wasn't a viable path. Once we realized that the desire for an SMS-based solution was high, we returned to our previous sellers to stress-test the idea. Two of the three said they felt that approach would work for their business just as well if not better than a shared device.
+        </p>
+      </div>
+    </section>
+
+    <!-- PIVOT -->
+    <section class="cs-section">
+      <div class="cs-section-inner">
+        <p class="cs-section-label">Pivot</p>
+        <h2 class="cs-section-title">When a simple solution works better</h2>
+        <p class="cs-body">
+          After reviewing the final round of feedback, we made the decision to pivot to an SMS-based solution. The research made a compelling case: not all sellers have a shared device, but every buyer has a phone. We realized that by trying to build exactly what sellers asked for, we had overlooked what they actually needed. A simpler approach could address the core problem of getting an in-person signature without overbuilding or introducing unnecessary complexity.
+        </p>
+
+        <h3 class="cs-subsection-title">Why pivot to an SMS-based solution</h3>
+
+        <div class="cs-narrative-callout">
+          <p class="cs-narrative-callout-title">We can be inclusive of more sellers</p>
+          <p class="cs-body" style="margin-bottom: 0;">Our first round of seller calls led us to over-index on a shared device solution. While that approach works for some sellers, there is a meaningful segment for whom it simply isn't viable. Sending contracts via SMS reaches clients wherever they are, without requiring any additional hardware on the seller's side.</p>
+        </div>
+
+        <div class="cs-narrative-callout">
+          <p class="cs-narrative-callout-title">We can solve the core problem with less scope and risk</p>
+          <p class="cs-body" style="margin-bottom: 0;">A well-executed shared device solution would require building a locking and unlocking mechanism for signing mode, as well as adjustments to support signing multiple contracts in sequence. This would be a large undertaking from an eng POV. SMS delivery, by contrast, was a small addition that would easily fit into the scope of our existing adaptation of contracts to mobile.</p>
+        </div>
+
+        <div class="cs-narrative-callout">
+          <p class="cs-narrative-callout-title">We can solve for edge cases</p>
+          <p class="cs-body" style="margin-bottom: 0;">As a bonus, SMS unlocks a flow that the shared device solution couldn't easily support: walk-in clients. The shared device approach was optimized for previously sent contracts. Getting a walk-in signed would have required creating a contract, emailing it, then returning to the sent contract to initiate in-person signing. With SMS as the delivery method, sellers can send a contract directly to any walk-in client as part of the creation flow.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="cs-section cs-section--gray">
+      <div class="cs-section-inner">
+        <p class="cs-section-label">Solution</p>
+        <h2 class="cs-section-title">Smaller scope, bigger impact</h2>
+        <div class="cs-proto-row">
+          <div class="cs-proto-details">
+            <p class="cs-body" style="margin-bottom: var(--space-2);">
+              Ultimately, rather than build a new, complex feature, we decided to sequence a series of focused improvements that not only solved the original seller problem, but unlocked new capabilities.
+            </p>
+            <ul class="cs-arrow-list" style="margin-top: 0;">
+              <li>Added the Contracts product to the Invoices app</li>
+              <li>Gave sellers the ability to share contracts via SMS</li>
+              <li>Cleaned up the more menu to make resending clearer</li>
+              <li>Gave sellers the ability to resend a contract via SMS</li>
+            </ul>
+          </div>
+          <div class="cs-proto-video">
+            <video autoplay loop muted playsinline>
+              <source src="/images/Contracts/Solution.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <p class="cs-body" style="margin-top: var(--space-10);">
+          Together, these improvements meant that a seller could get a contract signed in the moment, whether a client forgot to sign in advance or walked in off the street, without any additional tooling or shared devices. Sellers can finally close the gap between a missed signature and a completed booking.
+        </p>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="cs-lightbox" class="cs-lightbox" onclick="closeLightbox()">
+      <button class="cs-lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+      <img src="" alt="" onclick="event.stopPropagation()" />
+    </div>
 
     <!-- NAV FOOTER -->
     <footer class="cs-footer">
@@ -62,7 +383,41 @@
       <p class="cs-footer-copy">© 2026 Ashley vonClausburg</p>
     </footer>
 
+    <script src="/password-gate.js" defer></script>
     <script src="/nav.js"></script>
     <script type="module" src="/src/main.js"></script>
+    <script>
+      function openLightbox(src, alt) {
+        const lb = document.getElementById('cs-lightbox');
+        lb.querySelector('img').src = src;
+        lb.querySelector('img').alt = alt || '';
+        lb.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeLightbox() {
+        document.getElementById('cs-lightbox').classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+      // Tabs
+      document.querySelectorAll('.cs-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          const idx = tab.dataset.tab;
+          const card = tab.closest('.cs-tabs-card');
+          card.querySelectorAll('.cs-tab').forEach(t => t.classList.toggle('is-active', t.dataset.tab === idx));
+          card.querySelectorAll('.cs-tab-panel').forEach(p => {
+            const isActive = p.dataset.panel === idx;
+            p.classList.toggle('is-active', isActive);
+            // Play/pause videos on tab switch
+            const vid = p.querySelector('video');
+            if (vid) {
+              if (isActive) { vid.currentTime = 0; vid.play(); }
+              else { vid.pause(); }
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
