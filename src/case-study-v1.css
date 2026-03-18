@@ -292,6 +292,12 @@
   color: var(--color-text-muted);
 }
 
+.cs-note {
+  font-size: var(--t-sm);
+  color: var(--color-text-faint);
+  font-style: italic;
+}
+
 .cs-callout {
   display: flex;
   align-items: center;
