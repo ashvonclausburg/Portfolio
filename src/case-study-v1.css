@@ -293,7 +293,6 @@
 }
 
 .cs-note {
-  font-size: var(--t-sm);
   color: var(--color-text-faint);
   font-style: italic;
 }
