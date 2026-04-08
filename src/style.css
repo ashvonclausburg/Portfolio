@@ -502,7 +502,7 @@ footer {
   .project-grid { grid-template-columns: 1fr; }
   .about-content { grid-template-columns: 1fr; gap: 40px; }
   .career { padding-left: 24px; padding-right: 24px; }
-  .hero { min-height: 70vh; }
+  .hero { min-height: auto; height: auto; justify-content: flex-start; gap: 32px; }
   .hero-bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
   .hero-eyebrow { display: none; }
   .headline { margin-bottom: 32px; }
